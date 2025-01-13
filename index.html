@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-01-13 Mon 18:35 -->
+<!-- 2025-01-13 Mon 18:40 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Quantum Monte Carlo</title>
@@ -254,98 +254,93 @@ org_html_manager.setup();  // activate after the parameters are set
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org25dcd27">1. Introduction</a>
+<li><a href="#org09959b5">1. Introduction</a>
 <ul>
-<li><a href="#org6a44806">1.1. Energy and local energy</a></li>
+<li><a href="#orge79405a">1.1. Energy and local energy</a></li>
 </ul>
 </li>
-<li><a href="#orgd3c9a04">2. Numerical evaluation of the energy of the hydrogen atom</a>
+<li><a href="#orgaed73e5">2. Numerical evaluation of the energy of the hydrogen atom</a>
 <ul>
-<li><a href="#orgdcc38da">2.1. Local energy</a>
+<li><a href="#orgc231299">2.1. Local energy</a>
 <ul>
-<li><a href="#org2adc3e4">2.1.1. Test-driven development</a></li>
-<li><a href="#org1bff806">2.1.2. Exercise 1</a></li>
-<li><a href="#org452496e">2.1.3. Solution</a></li>
-<li><a href="#org152cd42">2.1.4. Exercise 2</a></li>
-<li><a href="#org03e5bff">2.1.5. Solution</a></li>
-<li><a href="#orga392b32">2.1.6. Exercise 3</a></li>
-<li><a href="#orgb189c98">2.1.7. Solution</a></li>
-<li><a href="#orgf90e0a5">2.1.8. Exercise 4</a></li>
-<li><a href="#org49c7b9a">2.1.9. Solution</a></li>
-<li><a href="#orgef216fe">2.1.10. Exercise 5</a></li>
-<li><a href="#org196481f">2.1.11. Solution</a></li>
+<li><a href="#org30ea45f">2.1.1. Test-driven development</a></li>
+<li><a href="#orga336a4b">2.1.2. Exercise 1</a></li>
+<li><a href="#orgb7ddd88">2.1.3. Exercise 2</a></li>
+<li><a href="#org37a061e">2.1.4. Exercise 3</a></li>
+<li><a href="#orge7abb6c">2.1.5. Exercise 4</a></li>
+<li><a href="#org26ce568">2.1.6. Exercise 5</a></li>
 </ul>
 </li>
-<li><a href="#org8f09841">2.2. Plot of the local energy along the \(x\) axis</a>
+<li><a href="#org5305f19">2.2. Plot of the local energy along the \(x\) axis</a>
 <ul>
-<li><a href="#org3a18918">2.2.1. Exercise</a></li>
+<li><a href="#org347dbf8">2.2.1. Exercise</a></li>
 </ul>
 </li>
-<li><a href="#org519b08e">2.3. Numerical estimation of the energy</a>
+<li><a href="#orgcd792df">2.3. Numerical estimation of the energy</a>
 <ul>
-<li><a href="#org5173519">2.3.1. Exercise</a></li>
+<li><a href="#org59f2fe2">2.3.1. Exercise</a></li>
 </ul>
 </li>
-<li><a href="#orgba93cef">2.4. Variance of the local energy</a>
+<li><a href="#org73e6b5b">2.4. Variance of the local energy</a>
 <ul>
-<li><a href="#org77210ea">2.4.1. Exercise (optional)</a></li>
-<li><a href="#org812e08b">2.4.2. Exercise</a></li>
+<li><a href="#org45fe7db">2.4.1. Exercise (optional)</a></li>
+<li><a href="#orgb77a73c">2.4.2. Exercise</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org5832bd4">3. Variational Monte Carlo</a>
+<li><a href="#orgf8f6624">3. Variational Monte Carlo</a>
 <ul>
-<li><a href="#org83c6afa">3.1. Computation of the statistical error</a>
+<li><a href="#org41afc6e">3.1. Computation of the statistical error</a>
 <ul>
-<li><a href="#org37dd654">3.1.1. Exercise</a></li>
+<li><a href="#org1e80715">3.1.1. Exercise</a></li>
 </ul>
 </li>
-<li><a href="#orgc08a65d">3.2. Uniform sampling in the box</a>
+<li><a href="#org692e96f">3.2. Uniform sampling in the box</a>
 <ul>
-<li><a href="#org87abc39">3.2.1. Exercise</a></li>
+<li><a href="#orgd043b5a">3.2.1. Exercise</a></li>
 </ul>
 </li>
-<li><a href="#org19c1106">3.3. Metropolis sampling with &Psi;<sup>2</sup></a>
+<li><a href="#org0b92931">3.3. Metropolis sampling with &Psi;<sup>2</sup></a>
 <ul>
-<li><a href="#org9c8e760">3.3.1. Optimal step size</a></li>
-<li><a href="#org014a8b1">3.3.2. Exercise</a></li>
+<li><a href="#orgac9e609">3.3.1. Optimal step size</a></li>
+<li><a href="#org6867ba6">3.3.2. Exercise</a></li>
 </ul>
 </li>
-<li><a href="#org38a324f">3.4. Generalized Metropolis algorithm</a>
+<li><a href="#orgf08efff">3.4. Generalized Metropolis algorithm</a>
 <ul>
-<li><a href="#org02d154f">3.4.1. Gaussian random number generator</a></li>
-<li><a href="#orga3809a5">3.4.2. Exercise 1</a></li>
-<li><a href="#org71f9272">3.4.3. Exercise 2</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org0670e2c">4. Diffusion Monte Carlo</a>
-<ul>
-<li><a href="#org825751d">4.1. Schrödinger equation in imaginary time</a></li>
-<li><a href="#org30deaee">4.2. Relation to diffusion</a></li>
-<li><a href="#org608aa5a">4.3. Importance sampling</a>
-<ul>
-<li><a href="#orga07840c">4.3.1. Appendix : Details of the Derivation</a></li>
-</ul>
-</li>
-<li><a href="#orgf7700bd">4.4. Pure Diffusion Monte Carlo</a></li>
-<li><a href="#org4d7349b">4.5. Hydrogen atom</a>
-<ul>
-<li><a href="#org9202517">4.5.1. Exercise</a></li>
+<li><a href="#org387422f">3.4.1. Gaussian random number generator</a></li>
+<li><a href="#org92c6d28">3.4.2. Exercise 1</a></li>
+<li><a href="#orgcbb5610">3.4.3. Exercise 2</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org1ba213b">5. Project</a></li>
-<li><a href="#orgd26718d">6. Acknowledgments</a></li>
+<li><a href="#org27568c5">4. Diffusion Monte Carlo</a>
+<ul>
+<li><a href="#org9de1793">4.1. Schrödinger equation in imaginary time</a></li>
+<li><a href="#org3a16075">4.2. Relation to diffusion</a></li>
+<li><a href="#orgdc59486">4.3. Importance sampling</a>
+<ul>
+<li><a href="#orgc1222c8">4.3.1. Appendix : Details of the Derivation</a></li>
+</ul>
+</li>
+<li><a href="#org45d649d">4.4. Pure Diffusion Monte Carlo</a></li>
+<li><a href="#org4756bc2">4.5. Hydrogen atom</a>
+<ul>
+<li><a href="#org3aa1d28">4.5.1. Exercise</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org127da82">5. Project</a></li>
+<li><a href="#orge762b50">6. Acknowledgments</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org25dcd27" class="outline-2">
-<h2 id="org25dcd27"><span class="section-number-2">1.</span> Introduction</h2>
+<div id="outline-container-org09959b5" class="outline-2">
+<h2 id="org09959b5"><span class="section-number-2">1.</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 This website contains the QMC tutorial of the 2023 LTTC winter school
@@ -385,8 +380,8 @@ coordinates, etc).
 </p>
 </div>
 
-<div id="outline-container-org6a44806" class="outline-3">
-<h3 id="org6a44806"><span class="section-number-3">1.1.</span> Energy and local energy</h3>
+<div id="outline-container-orge79405a" class="outline-3">
+<h3 id="orge79405a"><span class="section-number-3">1.1.</span> Energy and local energy</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 For a given system with Hamiltonian \(\hat{H}\) and wave function \(\Psi\), we define the local energy as
@@ -473,7 +468,7 @@ a QMC trajectory:
 </p>
 
 
-<div id="org01e98c2" class="figure">
+<div id="org2076b92" class="figure">
 <p><img src="./n2.gif" alt="n2.gif" />
 </p>
 </div>
@@ -481,8 +476,8 @@ a QMC trajectory:
 </div>
 </div>
 
-<div id="outline-container-orgd3c9a04" class="outline-2">
-<h2 id="orgd3c9a04"><span class="section-number-2">2.</span> Numerical evaluation of the energy of the hydrogen atom</h2>
+<div id="outline-container-orgaed73e5" class="outline-2">
+<h2 id="orgaed73e5"><span class="section-number-2">2.</span> Numerical evaluation of the energy of the hydrogen atom</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 In this section, we consider the hydrogen atom with the following
@@ -511,8 +506,8 @@ To do that, we will compute the local energy and check whether it is constant.
 </p>
 </div>
 
-<div id="outline-container-orgdcc38da" class="outline-3">
-<h3 id="orgdcc38da"><span class="section-number-3">2.1.</span> Local energy</h3>
+<div id="outline-container-orgc231299" class="outline-3">
+<h3 id="orgc231299"><span class="section-number-3">2.1.</span> Local energy</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 You will now program all quantities needed to compute the local
@@ -525,7 +520,7 @@ Write all the functions of this section in a single file :
 Fortran, or <code>hydrogen.c</code> and <code>hydrogen.h</code> if you use C.
 </p>
 
-<div class="note" id="org902fca9">
+<div class="note" id="orgb107c6c">
 <ul class="org-ul">
 <li>When computing a square root in \(\mathbb{R}\), <b>always</b> make sure
 that the argument of the square root is non-negative.</li>
@@ -540,8 +535,8 @@ to catch the error.
 </div>
 </div>
 
-<div id="outline-container-org2adc3e4" class="outline-4">
-<h4 id="org2adc3e4"><span class="section-number-4">2.1.1.</span> Test-driven development</h4>
+<div id="outline-container-org30ea45f" class="outline-4">
+<h4 id="org30ea45f"><span class="section-number-4">2.1.1.</span> Test-driven development</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <p>
 <a href="https://en.wikipedia.org/wiki/Test-driven_development">Test-driven development</a> (TDD) is a software development process in
@@ -567,10 +562,10 @@ should behave.</li>
 </div>
 </div>
 
-<div id="outline-container-org1bff806" class="outline-4">
-<h4 id="org1bff806"><span class="section-number-4">2.1.2.</span> Exercise 1</h4>
+<div id="outline-container-orga336a4b" class="outline-4">
+<h4 id="orga336a4b"><span class="section-number-4">2.1.2.</span> Exercise 1</h4>
 <div class="outline-text-4" id="text-2-1-2">
-<div class="exercise" id="orgd1413ca">
+<div class="exercise" id="org79ab761">
 <p>
 Write a function called <code>potential</code> that takes a single argument
 <code>r</code>, which is an array of 3 double precision numbers. The function
@@ -593,7 +588,7 @@ If the distance is greater than 0, the potential is calculated as
 </div>
 
 <ol class="org-ol">
-<li><a id="orge038052"></a>Python<br />
+<li><a id="org157c49a"></a>Python<br />
 <div class="outline-text-5" id="text-2-1-2-1">
 <div class="org-src-container">
 <pre class="src src-python">#<span style="color: #b22222;">!/usr/bin/env python3</span>
@@ -621,7 +616,7 @@ If the distance is greater than 0, the potential is calculated as
 </div>
 </li>
 
-<li><a id="orgcd22a4e"></a>Fortran<br />
+<li><a id="orgd3c7ac3"></a>Fortran<br />
 <div class="outline-text-5" id="text-2-1-2-2">
 <p>
 If the extension of your file is <code>.F90</code> and not <code>.f90</code>, the C
@@ -690,7 +685,7 @@ To compile your code and activate the test, use:
 </div>
 </li>
 
-<li><a id="org85165eb"></a>C<br />
+<li><a id="org402acc5"></a>C<br />
 <div class="outline-text-5" id="text-2-1-2-3">
 <p>
 Compile your code with the <code>-DTEST_H</code> option. It will activate
@@ -757,175 +752,10 @@ Don't forget to use <code>-lm</code> to link with the math library.
 </div>
 
 
-<div id="outline-container-org452496e" class="outline-4">
-<h4 id="org452496e"><span class="section-number-4">2.1.3.</span> Solution&#xa0;&#xa0;&#xa0;<span class="tag"><span class="solution3">solution3</span></span></h4>
+<div id="outline-container-orgb7ddd88" class="outline-4">
+<h4 id="orgb7ddd88"><span class="section-number-4">2.1.3.</span> Exercise 2</h4>
 <div class="outline-text-4" id="text-2-1-3">
-</div>
-<ol class="org-ol">
-<li><a id="org9055e61"></a>Python<br />
-<div class="outline-text-5" id="text-2-1-3-1">
-<div class="org-src-container">
-<pre class="src src-python">#<span style="color: #b22222;">!/usr/bin/env python3</span>
-<span style="color: #a020f0;">import</span> numpy <span style="color: #a020f0;">as</span> np
-
-<span style="color: #a020f0;">def</span> <span style="color: #0000ff;">potential</span>(r):
-    <span style="color: #a0522d;">distance</span> = np.sqrt(np.dot(r,r))
-    <span style="color: #a020f0;">if</span> distance == 0:
-        <span style="color: #483d8b;">print</span>(<span style="color: #8b2252;">"potential at r=0 diverges"</span>)
-        <span style="color: #a020f0;">return</span> -<span style="color: #483d8b;">float</span>(<span style="color: #8b2252;">"inf"</span>)
-    <span style="color: #a020f0;">return</span> -1. / distance
-
-
-<span style="color: #a020f0;">def</span> <span style="color: #0000ff;">test_potential</span>():
-    <span style="color: #a0522d;">expected_output</span> = -1./15.
-    <span style="color: #a020f0;">for</span> r <span style="color: #a020f0;">in</span> [( 2., 5., 14.), (5., 14., 2.), 
-              (-2., 5.,-14.), (5.,-14.,-2.), 
-              ( 0., 9.,-12.), (9.,-12., 0.)]:
-          <span style="color: #a020f0;">assert</span> potential(r) == expected_output
-
-    <span style="color: #a0522d;">r</span> = (0., 0., 0.)
-    <span style="color: #a020f0;">assert</span> potential(r) == -<span style="color: #483d8b;">float</span>(<span style="color: #8b2252;">"inf"</span>)
-
-    <span style="color: #483d8b;">print</span>(<span style="color: #8b2252;">"potential ok"</span>)
-
-<span style="color: #a020f0;">if</span> <span style="color: #483d8b;">__name__</span> == <span style="color: #8b2252;">"__main__"</span>:
-    test_potential()
-</pre>
-</div>
-</div>
-</li>
-
-<li><a id="org00337cd"></a>Fortran<br />
-<div class="outline-text-5" id="text-2-1-3-2">
-<div class="org-src-container">
-<pre class="src src-f90"><span style="color: #228b22;">double precision </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">potential</span><span style="color: #000000; background-color: #ffffff;">(r)</span>
-  <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
-  <span style="color: #228b22;">double precision</span>, <span style="color: #a020f0;">intent</span>(in) ::<span style="color: #a0522d;"> r(3)</span>
-
-  <span style="color: #228b22;">double precision</span>             ::<span style="color: #a0522d;"> distance</span>
-
-  distance = dsqrt( r(1)*r(1) + r(2)*r(2) + r(3)*r(3) )
-
-  <span style="color: #a020f0;">if</span> (distance &gt; 0.d0) <span style="color: #a020f0;">then</span>
-     potential = -1.d0 / distance
-  <span style="color: #a020f0;">else</span>
-     <span style="color: #a020f0;">print</span> *, <span style="color: #8b2252;">'Warning: potential at r=0.d0 diverges'</span>
-     potential = -<span style="color: #a020f0;">huge</span>(1.d0)
-  <span style="color: #a020f0;">end if</span>
-
-<span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">potential</span>
-
-<span style="color: #a020f0;">subroutine</span> <span style="color: #0000ff;">test_potential</span>
-    <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
-    <span style="color: #228b22;">double precision</span> ::<span style="color: #a0522d;"> r(3)</span>
-    <span style="color: #228b22;">double precision</span> ::<span style="color: #a0522d;"> expected_output</span>
-    <span style="color: #228b22;">double precision</span>, <span style="color: #a020f0;">external</span> ::<span style="color: #a0522d;"> potential</span>
-
-    expected_output = -1.d0/15.d0
-
-    r(:) = (/ 2.d0, 5.d0, 14.d0 /)
-    <span style="color: #a020f0;">if</span> (potential(r) /= expected_output) <span style="color: #a020f0;">stop</span> <span style="color: #8b2252;">'Failed'</span>
-
-    r(:) = (/ 5.d0, 14.d0, 2.d0 /)
-    <span style="color: #a020f0;">if</span> (potential(r) /= expected_output) <span style="color: #a020f0;">stop</span> <span style="color: #8b2252;">'Failed'</span>
-
-    r(:) = (/ -2.d0, 5.d0, -14.d0 /)
-    <span style="color: #a020f0;">if</span> (potential(r) /= expected_output) <span style="color: #a020f0;">stop</span> <span style="color: #8b2252;">'Failed'</span>
-
-    r(:) = (/ 5.d0, -14.d0, -2.d0 /)
-    <span style="color: #a020f0;">if</span> (potential(r) /= expected_output) <span style="color: #a020f0;">stop</span> <span style="color: #8b2252;">'Failed'</span>
-
-    r(:) = (/ 0.d0, 9.d0, 12.d0 /)
-    <span style="color: #a020f0;">if</span> (potential(r) /= expected_output) <span style="color: #a020f0;">stop</span> <span style="color: #8b2252;">'Failed'</span>
-
-    r(:) = (/ 9.d0, -12.d0, 0.d0 /)
-    <span style="color: #a020f0;">if</span> (potential(r) /= expected_output) <span style="color: #a020f0;">stop</span> <span style="color: #8b2252;">'Failed'</span>
-
-    r(:) = 0.d0
-    expected_output = -<span style="color: #a020f0;">huge</span>(1.d0)
-    <span style="color: #a020f0;">if</span> (potential(r) /= expected_output) <span style="color: #a020f0;">stop</span> <span style="color: #8b2252;">'Failed r=0'</span>
-    <span style="color: #a020f0;">print</span> *, <span style="color: #8b2252;">'potential ok'</span>
-
-<span style="color: #a020f0;">end subroutine</span> <span style="color: #0000ff;">test_potential</span>
-
-<span style="color: #483d8b;">#ifdef</span> TEST_H
-<span style="color: #a020f0;">program</span> <span style="color: #0000ff;">test_h</span>
-  <span style="color: #a020f0;">call</span> <span style="color: #0000ff;">test_potential</span>
-<span style="color: #a020f0;">end program</span> <span style="color: #0000ff;">test_h</span>
-<span style="color: #483d8b;">#endif</span>
-</pre>
-</div>
-</div>
-</li>
-
-<li><a id="orgd5465f1"></a>C<br />
-<div class="outline-text-5" id="text-2-1-3-3">
-<div class="org-src-container">
-<pre class="src src-c"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stdio.h&gt;</span>   // <span style="color: #b22222;">printf</span>
-<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;math.h&gt;</span>    // <span style="color: #b22222;">sqrt</span>
-<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stdlib.h&gt;</span>  // <span style="color: #b22222;">exit</span>
-<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;assert.h&gt;</span>  // <span style="color: #b22222;">assert</span>
-
-<span style="color: #228b22;">double</span> <span style="color: #0000ff;">potential</span>(<span style="color: #228b22;">double</span> <span style="color: #a0522d;">r</span>[3]) {
-  <span style="color: #228b22;">double</span> <span style="color: #a0522d;">distance</span>;
-
-  distance = sqrt(r[0]*r[0] + r[1]*r[1] + r[2]*r[2]);
-
-  <span style="color: #a020f0;">if</span> (distance &gt; 0) {
-    <span style="color: #a020f0;">return</span> -1.0 / distance;
-  } <span style="color: #a020f0;">else</span> {
-    printf(<span style="color: #8b2252;">"Warning: potential at r=0 diverges\n"</span>);
-    <span style="color: #a020f0;">return</span> -HUGE_VAL;
-  }
-}
-
-<span style="color: #a020f0;">static</span> <span style="color: #228b22;">void</span> <span style="color: #0000ff;">test_potential</span>() {
-    <span style="color: #228b22;">double</span> <span style="color: #a0522d;">r</span>[3];
-    <span style="color: #228b22;">double</span> <span style="color: #a0522d;">expected_output</span>;
-
-    expected_output = -1./15.;
-    r[0] = 2.;   r[1] =  5.;   r[2] = 14.;
-    assert (potential(r) == expected_output);
-
-    r[0] = 5.;   r[1] = 14.;   r[2] = 2.;
-    assert (potential(r) == expected_output);
-
-    r[0] = -2.;   r[1] = 5.;   r[2] = -14.;
-    assert (potential(r) == expected_output);
-
-    r[0] = 5.;   r[1] = -14.;   r[2] = -2.;
-    assert (potential(r) == expected_output);
-
-    r[0] = 0.;   r[1] = 9.;   r[2] = 12.;
-    assert (potential(r) == expected_output);
-
-    r[0] = 9.;   r[1] = -12.;   r[2] = 0.;
-    assert (potential(r) == expected_output);
-
-    expected_output = -HUGE_VAL;
-    r[0] = 0.;   r[1] = 0.;   r[2] = 0.;
-    assert (potential(r) == expected_output);
-
-    printf(<span style="color: #8b2252;">"potential ok\n"</span>);
-}
-
-<span style="color: #483d8b;">#ifdef</span> TEST_H
-<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
-    test_potential();
-    <span style="color: #a020f0;">return</span> 0;
-}
-<span style="color: #483d8b;">#endif</span>
-</pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-
-<div id="outline-container-org152cd42" class="outline-4">
-<h4 id="org152cd42"><span class="section-number-4">2.1.4.</span> Exercise 2</h4>
-<div class="outline-text-4" id="text-2-1-4">
-<div class="exercise" id="orgfb5092f">
+<div class="exercise" id="orgffc3e56">
 <p>
 Write a function called <code>psi</code> that takes two arguments: <code>a</code> which is a
 double precision number, and <code>r</code> which is an array of 3 double
@@ -937,8 +767,8 @@ function at the given point \(\mathbf{r}\).
 </div>
 
 <ol class="org-ol">
-<li><a id="org9977f0a"></a>Python<br />
-<div class="outline-text-5" id="text-2-1-4-1">
+<li><a id="org427deb5"></a>Python<br />
+<div class="outline-text-5" id="text-2-1-3-1">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #a020f0;">def</span> <span style="color: #0000ff;">psi</span>(a, r):
     # <span style="color: #b22222;">TODO</span>
@@ -947,8 +777,8 @@ function at the given point \(\mathbf{r}\).
 </div>
 </li>
 
-<li><a id="orgb7a6845"></a>Fortran<br />
-<div class="outline-text-5" id="text-2-1-4-2">
+<li><a id="orgc37c989"></a>Fortran<br />
+<div class="outline-text-5" id="text-2-1-3-2">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #228b22;">double precision </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">psi</span><span style="color: #000000; background-color: #ffffff;">(a, r)</span>
   <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -962,8 +792,8 @@ function at the given point \(\mathbf{r}\).
 </div>
 </li>
 
-<li><a id="orgf7005f5"></a>C<br />
-<div class="outline-text-5" id="text-2-1-4-3">
+<li><a id="org436e7b4"></a>C<br />
+<div class="outline-text-5" id="text-2-1-3-3">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">double</span> <span style="color: #0000ff;">psi</span>(<span style="color: #228b22;">double</span> <span style="color: #a0522d;">a</span>, <span style="color: #228b22;">double</span> <span style="color: #a0522d;">r</span>[3]) {
   // <span style="color: #b22222;">TODO</span>
@@ -975,56 +805,10 @@ function at the given point \(\mathbf{r}\).
 </ol>
 </div>
 
-<div id="outline-container-org03e5bff" class="outline-4">
-<h4 id="org03e5bff"><span class="section-number-4">2.1.5.</span> Solution&#xa0;&#xa0;&#xa0;<span class="tag"><span class="solution3">solution3</span></span></h4>
-<div class="outline-text-4" id="text-2-1-5">
-</div>
-<ol class="org-ol">
-<li><a id="org547b483"></a>Python<br />
-<div class="outline-text-5" id="text-2-1-5-1">
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #a020f0;">def</span> <span style="color: #0000ff;">psi</span>(a, r):
-    <span style="color: #a020f0;">return</span> np.exp(-a*np.sqrt(np.dot(r,r)))
-</pre>
-</div>
-</div>
-</li>
-
-<li><a id="orgffc8ccb"></a>Fortran<br />
-<div class="outline-text-5" id="text-2-1-5-2">
-<div class="org-src-container">
-<pre class="src src-f90"><span style="color: #228b22;">double precision </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">psi</span><span style="color: #000000; background-color: #ffffff;">(a, r)</span>
-  <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
-  <span style="color: #228b22;">double precision</span>, <span style="color: #a020f0;">intent</span>(in) ::<span style="color: #a0522d;"> a, r(3)</span>
-
-  psi = dexp(-a * dsqrt( r(1)*r(1) + r(2)*r(2) + r(3)*r(3) ))
-<span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">psi</span>
-</pre>
-</div>
-</div>
-</li>
-
-<li><a id="org92efeb5"></a>C<br />
-<div class="outline-text-5" id="text-2-1-5-3">
-<div class="org-src-container">
-<pre class="src src-c"><span style="color: #228b22;">double</span> <span style="color: #0000ff;">psi</span>(<span style="color: #228b22;">double</span> <span style="color: #a0522d;">a</span>, <span style="color: #228b22;">double</span> <span style="color: #a0522d;">r</span>[3]) {
-  <span style="color: #228b22;">double</span> <span style="color: #a0522d;">distance</span>;
-
-  distance = sqrt(r[0]*r[0] + r[1]*r[1] + r[2]*r[2]);
-
-  <span style="color: #a020f0;">return</span> exp(-a * distance);
-}
-</pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-
-<div id="outline-container-orga392b32" class="outline-4">
-<h4 id="orga392b32"><span class="section-number-4">2.1.6.</span> Exercise 3</h4>
-<div class="outline-text-4" id="text-2-1-6">
-<div class="exercise" id="orga916b97">
+<div id="outline-container-org37a061e" class="outline-4">
+<h4 id="org37a061e"><span class="section-number-4">2.1.4.</span> Exercise 3</h4>
+<div class="outline-text-4" id="text-2-1-4">
+<div class="exercise" id="orgf28a12a">
 <p>
 Write a function called <code>kinetic</code> that takes two arguments: <code>a</code>
 which is a double precision number, and <code>r</code> which is an array of 3
@@ -1090,8 +874,8 @@ Therefore, the local kinetic energy is
 </div>
 
 <ol class="org-ol">
-<li><a id="org7c33061"></a>Python<br />
-<div class="outline-text-5" id="text-2-1-6-1">
+<li><a id="orgcb15f6c"></a>Python<br />
+<div class="outline-text-5" id="text-2-1-4-1">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #a020f0;">def</span> <span style="color: #0000ff;">kinetic</span>(a,r):
     # <span style="color: #b22222;">TODO</span>
@@ -1100,8 +884,8 @@ Therefore, the local kinetic energy is
 </div>
 </li>
 
-<li><a id="org073f3de"></a>Fortran<br />
-<div class="outline-text-5" id="text-2-1-6-2">
+<li><a id="orge43b6c1"></a>Fortran<br />
+<div class="outline-text-5" id="text-2-1-4-2">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #228b22;">double precision </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">kinetic</span><span style="color: #000000; background-color: #ffffff;">(a,r)</span>
   <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
@@ -1115,8 +899,8 @@ Therefore, the local kinetic energy is
 </div>
 </li>
 
-<li><a id="orgeff00b9"></a>C<br />
-<div class="outline-text-5" id="text-2-1-6-3">
+<li><a id="org5cd8743"></a>C<br />
+<div class="outline-text-5" id="text-2-1-4-3">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">double</span> <span style="color: #0000ff;">kinetic</span>(<span style="color: #228b22;">double</span> <span style="color: #a0522d;">a</span>, <span style="color: #228b22;">double</span> <span style="color: #a0522d;">r</span>[3]) {
   //<span style="color: #b22222;">TODO</span>
@@ -1128,77 +912,10 @@ Therefore, the local kinetic energy is
 </ol>
 </div>
 
-<div id="outline-container-orgb189c98" class="outline-4">
-<h4 id="orgb189c98"><span class="section-number-4">2.1.7.</span> Solution&#xa0;&#xa0;&#xa0;<span class="tag"><span class="solution3">solution3</span></span></h4>
-<div class="outline-text-4" id="text-2-1-7">
-</div>
-<ol class="org-ol">
-<li><a id="orgff15eab"></a>Python<br />
-<div class="outline-text-5" id="text-2-1-7-1">
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #a020f0;">def</span> <span style="color: #0000ff;">kinetic</span>(a,r):
-    <span style="color: #a0522d;">distance</span> = np.sqrt(np.dot(r,r))
-    <span style="color: #a020f0;">if</span> distance &gt; 0:
-        <span style="color: #a0522d;">dinv</span> = 1./distance 
-    <span style="color: #a020f0;">else</span>:
-        <span style="color: #483d8b;">print</span> (<span style="color: #8b2252;">'Warning: kinetic energy diverges at r=0'</span>)
-        <span style="color: #a0522d;">dinv</span> = <span style="color: #483d8b;">float</span>(<span style="color: #8b2252;">"inf"</span>) 
-    <span style="color: #a020f0;">return</span> a * (dinv - 0.5 * a)
-</pre>
-</div>
-</div>
-</li>
-
-<li><a id="org6fa813a"></a>Fortran<br />
-<div class="outline-text-5" id="text-2-1-7-2">
-<div class="org-src-container">
-<pre class="src src-f90"><span style="color: #228b22;">double precision </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">kinetic</span><span style="color: #000000; background-color: #ffffff;">(a,r)</span>
-  <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
-  <span style="color: #228b22;">double precision</span>, <span style="color: #a020f0;">intent</span>(in) ::<span style="color: #a0522d;"> a, r(3)</span>
-
-  <span style="color: #228b22;">double precision</span>             ::<span style="color: #a0522d;"> distance</span>
-
-  distance = dsqrt( r(1)*r(1) + r(2)*r(2) + r(3)*r(3) ) 
-
-  <span style="color: #a020f0;">if</span> (distance &gt; 0.d0) <span style="color: #a020f0;">then</span>
-     kinetic =  a * (1.d0 / distance - 0.5d0 * a)
-  <span style="color: #a020f0;">else</span>
-     <span style="color: #a020f0;">print</span> *, <span style="color: #8b2252;">'Warning: kinetic energy diverges at r=0'</span>
-     kinetic =  a * (<span style="color: #a020f0;">huge</span>(1.d0) - 0.5d0 * a)
-  <span style="color: #a020f0;">end if</span>
-
-<span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">kinetic</span>
-</pre>
-</div>
-</div>
-</li>
-
-<li><a id="org7313e77"></a>C<br />
-<div class="outline-text-5" id="text-2-1-7-3">
-<div class="org-src-container">
-<pre class="src src-c"><span style="color: #228b22;">double</span> <span style="color: #0000ff;">kinetic</span>(<span style="color: #228b22;">double</span> <span style="color: #a0522d;">a</span>, <span style="color: #228b22;">double</span> <span style="color: #a0522d;">r</span>[3]) {
-  <span style="color: #228b22;">double</span> <span style="color: #a0522d;">distance</span>;
-
-  distance = sqrt(r[0]*r[0] + r[1]*r[1] + r[2]*r[2]);
-
-  <span style="color: #a020f0;">if</span> (distance &gt; 0) {
-    <span style="color: #a020f0;">return</span> a * (1.0 / distance - 0.5 * a);
-  } <span style="color: #a020f0;">else</span> {
-    printf(<span style="color: #8b2252;">"Warning: kinetic energy diverges at r=0\n"</span>);
-    <span style="color: #a020f0;">return</span> a * (HUGE_VAL - 0.5 * a);
-  }
-}
-</pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-
-<div id="outline-container-orgf90e0a5" class="outline-4">
-<h4 id="orgf90e0a5"><span class="section-number-4">2.1.8.</span> Exercise 4</h4>
-<div class="outline-text-4" id="text-2-1-8">
-<div class="exercise" id="org53e73e8">
+<div id="outline-container-orge7abb6c" class="outline-4">
+<h4 id="orge7abb6c"><span class="section-number-4">2.1.5.</span> Exercise 4</h4>
+<div class="outline-text-4" id="text-2-1-5">
+<div class="exercise" id="orgdb02442">
 <p>
 Write a function called <code>e_loc</code> that takes two arguments: <code>a</code>
 which is a double precision number and <code>r</code> which is an array of 3
@@ -1223,8 +940,8 @@ get the local energy.
 
 
 <ol class="org-ol">
-<li><a id="org9628c94"></a>Python<br />
-<div class="outline-text-5" id="text-2-1-8-1">
+<li><a id="org7af430a"></a>Python<br />
+<div class="outline-text-5" id="text-2-1-5-1">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #a020f0;">def</span> <span style="color: #0000ff;">e_loc</span>(a,r):
     #<span style="color: #b22222;">TODO</span>
@@ -1233,9 +950,9 @@ get the local energy.
 </div>
 </li>
 
-<li><a id="orge24b906"></a>Fortran<br />
-<div class="outline-text-5" id="text-2-1-8-2">
-<div class="note" id="org82e01dc">
+<li><a id="orgb608ba7"></a>Fortran<br />
+<div class="outline-text-5" id="text-2-1-5-2">
+<div class="note" id="org47d4da7">
 <p>
 When you call a function in Fortran, you need to declare its
 return type.
@@ -1263,8 +980,8 @@ are calling is yours.
 </div>
 </li>
 
-<li><a id="orgdd8e3e0"></a>C<br />
-<div class="outline-text-5" id="text-2-1-8-3">
+<li><a id="orgb0fba62"></a>C<br />
+<div class="outline-text-5" id="text-2-1-5-3">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">double</span> <span style="color: #0000ff;">e_loc</span>(<span style="color: #228b22;">double</span> <span style="color: #a0522d;">a</span>, <span style="color: #228b22;">double</span> <span style="color: #a0522d;">r</span>[3]) {
   // <span style="color: #b22222;">TODO</span>
@@ -1276,56 +993,10 @@ are calling is yours.
 </ol>
 </div>
 
-<div id="outline-container-org49c7b9a" class="outline-4">
-<h4 id="org49c7b9a"><span class="section-number-4">2.1.9.</span> Solution&#xa0;&#xa0;&#xa0;<span class="tag"><span class="solution3">solution3</span></span></h4>
-<div class="outline-text-4" id="text-2-1-9">
-</div>
-<ol class="org-ol">
-<li><a id="org25c1b00"></a>Python<br />
-<div class="outline-text-5" id="text-2-1-9-1">
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #a020f0;">def</span> <span style="color: #0000ff;">e_loc</span>(a,r):
-    <span style="color: #a020f0;">return</span> kinetic(a,r) + potential(r)
-</pre>
-</div>
-</div>
-</li>
-
-<li><a id="org64927fd"></a>Fortran<br />
-<div class="outline-text-5" id="text-2-1-9-2">
-<div class="org-src-container">
-<pre class="src src-f90"><span style="color: #228b22;">double precision </span><span style="color: #a020f0;">function</span><span style="color: #a0522d;"> </span><span style="color: #0000ff;">e_loc</span><span style="color: #000000; background-color: #ffffff;">(a,r)</span>
-  <span style="color: #a020f0;">implicit</span> <span style="color: #228b22;">none</span>
-  <span style="color: #228b22;">double precision</span>, <span style="color: #a020f0;">intent</span>(in) ::<span style="color: #a0522d;"> a, r(3)</span>
-
-  <span style="color: #228b22;">double precision</span>, <span style="color: #a020f0;">external</span> ::<span style="color: #a0522d;"> kinetic</span>
-  <span style="color: #228b22;">double precision</span>, <span style="color: #a020f0;">external</span> ::<span style="color: #a0522d;"> potential</span>
-
-  e_loc = kinetic(a,r) + potential(r)
-
-<span style="color: #a020f0;">end function</span> <span style="color: #0000ff;">e_loc</span>
-</pre>
-</div>
-</div>
-</li>
-
-<li><a id="orge8165c2"></a>C<br />
-<div class="outline-text-5" id="text-2-1-9-3">
-<div class="org-src-container">
-<pre class="src src-c"><span style="color: #228b22;">double</span> <span style="color: #0000ff;">e_loc</span>(<span style="color: #228b22;">double</span> <span style="color: #a0522d;">a</span>, <span style="color: #228b22;">double</span> <span style="color: #a0522d;">r</span>[3]) {
-  <span style="color: #a020f0;">return</span> kinetic(a, r) + potential(r);
-}
-</pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-
-<div id="outline-container-orgef216fe" class="outline-4">
-<h4 id="orgef216fe"><span class="section-number-4">2.1.10.</span> Exercise 5</h4>
-<div class="outline-text-4" id="text-2-1-10">
-<div class="exercise" id="orgcad19f1">
+<div id="outline-container-org26ce568" class="outline-4">
+<h4 id="org26ce568"><span class="section-number-4">2.1.6.</span> Exercise 5</h4>
+<div class="outline-text-4" id="text-2-1-6">
+<div class="exercise" id="orgb663d64">
 <p>
 Find the theoretical value of \(a\) for which \(\Psi\) is an eigenfunction of \(\hat{H}\).
 </p>
@@ -1333,29 +1004,10 @@ Find the theoretical value of \(a\) for which \(\Psi\) is an eigenfunction of \(
 </div>
 </div>
 </div>
-
-<div id="outline-container-org196481f" class="outline-4">
-<h4 id="org196481f"><span class="section-number-4">2.1.11.</span> Solution&#xa0;&#xa0;&#xa0;<span class="tag"><span class="solution3">solution3</span></span></h4>
-<div class="outline-text-4" id="text-2-1-11">
-\begin{eqnarray*}
-E &=& \frac{\hat{H} \Psi}{\Psi} = - \frac{1}{2} \frac{\Delta \Psi}{\Psi} -
-\frac{1}{|\mathbf{r}|}  \\
- &=& -\frac{1}{2}\left(a^2 - \frac{2a}{\mathbf{|r|}} \right) -
-\frac{1}{|\mathbf{r}|} \\
- &=&
--\frac{1}{2} a^2 + \frac{a-1}{\mathbf{|r|}} 
-\end{eqnarray*}
-
-<p>
-\(a=1\) cancels the \(1/|r|\) term, and makes the energy constant and
-equal to -0.5 atomic units.
-</p>
-</div>
-</div>
 </div>
 
-<div id="outline-container-org8f09841" class="outline-3">
-<h3 id="org8f09841"><span class="section-number-3">2.2.</span> Plot of the local energy along the \(x\) axis</h3>
+<div id="outline-container-org5305f19" class="outline-3">
+<h3 id="org5305f19"><span class="section-number-3">2.2.</span> Plot of the local energy along the \(x\) axis</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 The program you will write in this section will be written in
@@ -1379,7 +1031,7 @@ In Python, you should put at the beginning of the file
 to be able to use the <code>e_loc</code> function of the <code>hydrogen.py</code> file.
 </p>
 
-<div class="note" id="orge72790f">
+<div class="note" id="org97ff726">
 <p>
 It is better to use <code>#!/usr/bin/env python3</code> than
 <code>#!/usr/bin/python</code> because:
@@ -1411,7 +1063,7 @@ Similarly, in C
 </pre>
 </div>
 
-<div class="note" id="orgea09592">
+<div class="note" id="orga7f110b">
 <p>
 In C, you need the <code>-lm</code> argument to link with the math library
 that contains functions like <code>sqrt</code> and <code>exp</code>.
@@ -1420,10 +1072,10 @@ that contains functions like <code>sqrt</code> and <code>exp</code>.
 </div>
 </div>
 
-<div id="outline-container-org3a18918" class="outline-4">
-<h4 id="org3a18918"><span class="section-number-4">2.2.1.</span> Exercise</h4>
+<div id="outline-container-org347dbf8" class="outline-4">
+<h4 id="org347dbf8"><span class="section-number-4">2.2.1.</span> Exercise</h4>
 <div class="outline-text-4" id="text-2-2-1">
-<div class="exercise" id="orgc535071">
+<div class="exercise" id="orgcd662f9">
 <p>
 For multiple values of \(a\) (0.1, 0.2, 0.5, 1., 1.5, 2.), plot the
 local energy along the \(x\) axis.
@@ -1442,7 +1094,7 @@ lines to separate the data corresponding to different values of \(a\):
 
 </div>
 
-<div class="note" id="org517d266">
+<div class="note" id="org77ef5a4">
 <p>
 The potential and the kinetic energy both diverge at \(r=0\), so we
 choose a grid that doesn't contain the origin to avoid numerical issues.
@@ -1452,7 +1104,7 @@ choose a grid that doesn't contain the origin to avoid numerical issues.
 </div>
 
 <ol class="org-ol">
-<li><a id="org07dea94"></a>Python<br />
+<li><a id="org44db239"></a>Python<br />
 <div class="outline-text-5" id="text-2-2-1-1">
 <div class="org-src-container">
 <pre class="src src-python">#<span style="color: #b22222;">!/usr/bin/env python3</span>
@@ -1475,7 +1127,7 @@ plt.savefig(<span style="color: #8b2252;">"plot_py.png"</span>)
 </div>
 </li>
 
-<li><a id="org1884d26"></a>Fortran<br />
+<li><a id="org5326df1"></a>Fortran<br />
 <div class="outline-text-5" id="text-2-2-1-2">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">program</span> <span style="color: #0000ff;">plot</span>
@@ -1508,7 +1160,7 @@ To compile and run:
 </div>
 </li>
 
-<li><a id="org36b2b6b"></a>C<br />
+<li><a id="org1be772f"></a>C<br />
 <div class="outline-text-5" id="text-2-2-1-3">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stdio.h&gt;</span>
@@ -1571,8 +1223,8 @@ plot './data' index 0 using 1:2 with lines title 'a=0.1', \
 </div>
 </div>
 
-<div id="outline-container-org519b08e" class="outline-3">
-<h3 id="org519b08e"><span class="section-number-3">2.3.</span> Numerical estimation of the energy</h3>
+<div id="outline-container-orgcd792df" class="outline-3">
+<h3 id="orgcd792df"><span class="section-number-3">2.3.</span> Numerical estimation of the energy</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 If the space is discretized in small volume elements \(\mathbf{r}_i\)
@@ -1589,7 +1241,7 @@ multiplied by the volume element:
    \]
 </p>
 
-<div class="note" id="org33de549">
+<div class="note" id="orge963c22">
 <p>
 The energy is biased because:
 </p>
@@ -1601,10 +1253,10 @@ The energy is biased because:
 </div>
 </div>
 
-<div id="outline-container-org5173519" class="outline-4">
-<h4 id="org5173519"><span class="section-number-4">2.3.1.</span> Exercise</h4>
+<div id="outline-container-org59f2fe2" class="outline-4">
+<h4 id="org59f2fe2"><span class="section-number-4">2.3.1.</span> Exercise</h4>
 <div class="outline-text-4" id="text-2-3-1">
-<div class="exercise" id="org1725655">
+<div class="exercise" id="org60588f3">
 <p>
 Compute a numerical estimate of the energy using a grid of
 \(50\times50\times50\) points in the range \((-5,-5,-5) \le
@@ -1615,7 +1267,7 @@ Compute a numerical estimate of the energy using a grid of
 </div>
 
 <ol class="org-ol">
-<li><a id="org6ee64d0"></a>Python<br />
+<li><a id="org4db91ea"></a>Python<br />
 <div class="outline-text-5" id="text-2-3-1-1">
 <div class="org-src-container">
 <pre class="src src-python">#<span style="color: #b22222;">!/usr/bin/env python3</span>
@@ -1637,7 +1289,7 @@ Compute a numerical estimate of the energy using a grid of
 </div>
 </li>
 
-<li><a id="orgd47e324"></a>Fortran<br />
+<li><a id="org3f16386"></a>Fortran<br />
 <div class="outline-text-5" id="text-2-3-1-2">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">program</span> <span style="color: #0000ff;">energy_hydrogen</span>
@@ -1676,7 +1328,7 @@ To compile the Fortran code and run it:
 </div>
 </li>
 
-<li><a id="org7fabcb0"></a>C<br />
+<li><a id="orgfe8906b"></a>C<br />
 <div class="outline-text-5" id="text-2-3-1-3">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stdio.h&gt;</span>
@@ -1750,8 +1402,8 @@ factor, and prints the value of <code>a</code> and the corresponding energy.
 </div>
 </div>
 
-<div id="outline-container-orgba93cef" class="outline-3">
-<h3 id="orgba93cef"><span class="section-number-3">2.4.</span> Variance of the local energy</h3>
+<div id="outline-container-org73e6b5b" class="outline-3">
+<h3 id="org73e6b5b"><span class="section-number-3">2.4.</span> Variance of the local energy</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 The variance of the local energy is a functional of \(\Psi\)
@@ -1778,10 +1430,10 @@ energy can be used as a measure of the quality of a wave function.
 </p>
 </div>
 
-<div id="outline-container-org77210ea" class="outline-4">
-<h4 id="org77210ea"><span class="section-number-4">2.4.1.</span> Exercise (optional)</h4>
+<div id="outline-container-org45fe7db" class="outline-4">
+<h4 id="org45fe7db"><span class="section-number-4">2.4.1.</span> Exercise (optional)</h4>
 <div class="outline-text-4" id="text-2-4-1">
-<div class="exercise" id="org4f54b53">
+<div class="exercise" id="orgecfbdec">
 <p>
 Prove that :
 \[\langle \left( E - \langle E \rangle_{\Psi^2} \right)^2\rangle_{\Psi^2}  = \langle E^2 \rangle_{\Psi^2} - \langle E \rangle_{\Psi^2}^2 \]
@@ -1791,10 +1443,10 @@ Prove that :
 </div>
 </div>
 
-<div id="outline-container-org812e08b" class="outline-4">
-<h4 id="org812e08b"><span class="section-number-4">2.4.2.</span> Exercise</h4>
+<div id="outline-container-orgb77a73c" class="outline-4">
+<h4 id="orgb77a73c"><span class="section-number-4">2.4.2.</span> Exercise</h4>
 <div class="outline-text-4" id="text-2-4-2">
-<div class="exercise" id="orgc11b92c">
+<div class="exercise" id="org3a251be">
 <p>
 Add the calculation of the variance to the previous code, and
 compute a numerical estimate of the variance of the local energy using
@@ -1806,7 +1458,7 @@ a grid of \(50\times50\times50\) points in the range \((-5,-5,-5) \le
 </div>
 
 <ol class="org-ol">
-<li><a id="org0355808"></a>Python<br />
+<li><a id="orgaae33f7"></a>Python<br />
 <div class="outline-text-5" id="text-2-4-2-1">
 <div class="org-src-container">
 <pre class="src src-python">#<span style="color: #b22222;">!/usr/bin/env python3</span>
@@ -1825,7 +1477,7 @@ a grid of \(50\times50\times50\) points in the range \((-5,-5,-5) \le
 </div>
 </li>
 
-<li><a id="org2162fc1"></a>Fortran<br />
+<li><a id="orgace310e"></a>Fortran<br />
 <div class="outline-text-5" id="text-2-4-2-2">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">program</span> <span style="color: #0000ff;">variance_hydrogen</span>
@@ -1867,7 +1519,7 @@ To compile and run:
 </div>
 </li>
 
-<li><a id="orgb82e900"></a>C<br />
+<li><a id="orgeb585e7"></a>C<br />
 <div class="outline-text-5" id="text-2-4-2-3">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stdio.h&gt;</span>
@@ -1912,8 +1564,8 @@ To compile and run:
 </div>
 </div>
 
-<div id="outline-container-org5832bd4" class="outline-2">
-<h2 id="org5832bd4"><span class="section-number-2">3.</span> Variational Monte Carlo</h2>
+<div id="outline-container-orgf8f6624" class="outline-2">
+<h2 id="orgf8f6624"><span class="section-number-2">3.</span> Variational Monte Carlo</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Numerical integration with deterministic methods is very efficient
@@ -1929,8 +1581,8 @@ interval.
 </p>
 </div>
 
-<div id="outline-container-org83c6afa" class="outline-3">
-<h3 id="org83c6afa"><span class="section-number-3">3.1.</span> Computation of the statistical error</h3>
+<div id="outline-container-org41afc6e" class="outline-3">
+<h3 id="org41afc6e"><span class="section-number-3">3.1.</span> Computation of the statistical error</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 To compute the statistical error, you need to perform \(M\)
@@ -1970,10 +1622,10 @@ And the confidence interval is given by
 </p>
 </div>
 
-<div id="outline-container-org37dd654" class="outline-4">
-<h4 id="org37dd654"><span class="section-number-4">3.1.1.</span> Exercise</h4>
+<div id="outline-container-org1e80715" class="outline-4">
+<h4 id="org1e80715"><span class="section-number-4">3.1.1.</span> Exercise</h4>
 <div class="outline-text-4" id="text-3-1-1">
-<div class="exercise" id="orgabaca7f">
+<div class="exercise" id="org487c22c">
 <p>
 Write a function returning the average and statistical error of an
 input array.
@@ -1983,7 +1635,7 @@ input array.
 </div>
 
 <ol class="org-ol">
-<li><a id="orgb842516"></a>Python<br />
+<li><a id="orgb077303"></a>Python<br />
 <div class="outline-text-5" id="text-3-1-1-1">
 <div class="org-src-container">
 <pre class="src src-python">#<span style="color: #b22222;">!/usr/bin/env python3</span>
@@ -1997,7 +1649,7 @@ input array.
 </div>
 </li>
 
-<li><a id="org2f07868"></a>Fortran<br />
+<li><a id="orge9f5e4a"></a>Fortran<br />
 <div class="outline-text-5" id="text-3-1-1-2">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">subroutine</span> <span style="color: #0000ff;">ave_error</span>(x,n,ave,err)
@@ -2014,7 +1666,7 @@ input array.
 </div>
 </li>
 
-<li><a id="orgaf99953"></a>C<br />
+<li><a id="org1e87c2b"></a>C<br />
 <div class="outline-text-5" id="text-3-1-1-3">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stdio.h&gt;</span>
@@ -2058,8 +1710,8 @@ taking the square root of the variance divided by <code>n</code>.
 </div>
 </div>
 
-<div id="outline-container-orgc08a65d" class="outline-3">
-<h3 id="orgc08a65d"><span class="section-number-3">3.2.</span> Uniform sampling in the box</h3>
+<div id="outline-container-org692e96f" class="outline-3">
+<h3 id="org692e96f"><span class="section-number-3">3.2.</span> Uniform sampling in the box</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 We will now perform our first Monte Carlo calculation to compute the
@@ -2120,10 +1772,10 @@ compute the statistical error.
 </p>
 </div>
 
-<div id="outline-container-org87abc39" class="outline-4">
-<h4 id="org87abc39"><span class="section-number-4">3.2.1.</span> Exercise</h4>
+<div id="outline-container-orgd043b5a" class="outline-4">
+<h4 id="orgd043b5a"><span class="section-number-4">3.2.1.</span> Exercise</h4>
 <div class="outline-text-4" id="text-3-2-1">
-<div class="exercise" id="org470bb27">
+<div class="exercise" id="org3e4037b">
 <p>
 Parameterize the wave function with \(a=1.2\).  Perform 30
 independent Monte Carlo runs (\(M\)), each with 100 000 Monte Carlo
@@ -2135,9 +1787,9 @@ compute the average energy and the associated error bar (\(\delta E\)).
 </div>
 
 <ol class="org-ol">
-<li><a id="orgceeb523"></a>Python<br />
+<li><a id="orgef1d7be"></a>Python<br />
 <div class="outline-text-5" id="text-3-2-1-1">
-<div class="note" id="orgb1d31ea">
+<div class="note" id="orgaf9bc9e">
 <p>
 To draw a uniform random number in Python, you can use
 the <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.uniform.html"><code>random.uniform</code></a> function of Numpy.
@@ -2165,9 +1817,9 @@ the <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.rando
 </div>
 </li>
 
-<li><a id="orgfb347dd"></a>Fortran<br />
+<li><a id="org45f6de3"></a>Fortran<br />
 <div class="outline-text-5" id="text-3-2-1-2">
-<div class="note" id="orgb0e4c10">
+<div class="note" id="org827d624">
 <p>
 To draw a uniform random number in Fortran, you can use
 the <a href="https://gcc.gnu.org/onlinedocs/gfortran/RANDOM_005fNUMBER.html"><code>RANDOM_NUMBER</code></a> subroutine.
@@ -2175,7 +1827,7 @@ the <a href="https://gcc.gnu.org/onlinedocs/gfortran/RANDOM_005fNUMBER.html"><co
 
 </div>
 
-<div class="note" id="orge6b1224">
+<div class="note" id="org527985c">
 <p>
 When running Monte Carlo calculations, the number of steps is
 usually very large. We expect <code>nmax</code> to be possibly larger than 2
@@ -2227,9 +1879,9 @@ would imply modifying also the <code>ave_error</code> function.
 </div>
 </li>
 
-<li><a id="org4f0fc35"></a>C<br />
+<li><a id="orgfb40940"></a>C<br />
 <div class="outline-text-5" id="text-3-2-1-3">
-<div class="note" id="orgfbf6ab4">
+<div class="note" id="org8379edd">
 <p>
 To draw a uniform random number in C, you can use:
 <code>drand48()</code>, which is defined in the <code>stdlib.h</code> header. To
@@ -2347,8 +1999,8 @@ Finally, the program prints the average and error of the energies.
 </div>
 </div>
 
-<div id="outline-container-org19c1106" class="outline-3">
-<h3 id="org19c1106"><span class="section-number-3">3.3.</span> Metropolis sampling with &Psi;<sup>2</sup></h3>
+<div id="outline-container-org0b92931" class="outline-3">
+<h3 id="org0b92931"><span class="section-number-3">3.3.</span> Metropolis sampling with &Psi;<sup>2</sup></h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 We will now use the square of the wave function to sample random
@@ -2428,7 +2080,7 @@ which, for our choice of transition probability, becomes
    \]
 </p>
 
-<div class="exercise" id="orgf92b38d">
+<div class="exercise" id="orgf2fa390">
 <p>
 Explain why the transition probability cancels out in the
 expression of \(A\).
@@ -2453,7 +2105,7 @@ The algorithm is summarized as follows:
 <li>else, reject the move : set \(\mathbf{r}_{n+1} = \mathbf{r}_n\)</li>
 </ol>
 
-<div class="note" id="orgb6c7eb5">
+<div class="note" id="org9113ab4">
 <p>
 A common error is to remove the rejected samples from the
 calculation of the average. <b>Don't do it!</b>
@@ -2466,8 +2118,8 @@ All samples should be kept, from both accepted <i>and</i> rejected moves.
 </div>
 </div>
 
-<div id="outline-container-org9c8e760" class="outline-4">
-<h4 id="org9c8e760"><span class="section-number-4">3.3.1.</span> Optimal step size</h4>
+<div id="outline-container-orgac9e609" class="outline-4">
+<h4 id="orgac9e609"><span class="section-number-4">3.3.1.</span> Optimal step size</h4>
 <div class="outline-text-4" id="text-3-3-1">
 <p>
 If the box is infinitely small, the ratio will be very close
@@ -2491,7 +2143,7 @@ step such that the acceptance rate is close to 0.5 is a good
 compromise for the current problem.
 </p>
 
-<div class="note" id="org304b53a">
+<div class="note" id="orge0b8cc0">
 <p>
 Below, we use the symbol \(\delta t\) to denote \(\delta L\) since we will use
 the same variable later on to store a time step.
@@ -2501,10 +2153,10 @@ the same variable later on to store a time step.
 </div>
 </div>
 
-<div id="outline-container-org014a8b1" class="outline-4">
-<h4 id="org014a8b1"><span class="section-number-4">3.3.2.</span> Exercise</h4>
+<div id="outline-container-org6867ba6" class="outline-4">
+<h4 id="org6867ba6"><span class="section-number-4">3.3.2.</span> Exercise</h4>
 <div class="outline-text-4" id="text-3-3-2">
-<div class="exercise" id="org7678680">
+<div class="exercise" id="org0ea7312">
 <p>
 Modify the program of the previous section to compute the energy,
 sampled with \(\Psi^2\).
@@ -2523,7 +2175,7 @@ Can you observe a reduction in the statistical error?
 </div>
 
 <ol class="org-ol">
-<li><a id="org12e9d58"></a>Python<br />
+<li><a id="org516e184"></a>Python<br />
 <div class="outline-text-5" id="text-3-3-2-1">
 <div class="org-src-container">
 <pre class="src src-python">#<span style="color: #b22222;">!/usr/bin/env python3</span>
@@ -2559,7 +2211,7 @@ Can you observe a reduction in the statistical error?
 </div>
 </li>
 
-<li><a id="org49ad6f5"></a>Fortran<br />
+<li><a id="orgeb816df"></a>Fortran<br />
 <div class="outline-text-5" id="text-3-3-2-2">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">subroutine</span> <span style="color: #0000ff;">metropolis_montecarlo</span>(a,nmax,dt,energy,accep)
@@ -2608,7 +2260,7 @@ Can you observe a reduction in the statistical error?
 </div>
 </li>
 
-<li><a id="org8e691a8"></a>C<br />
+<li><a id="org23f9db9"></a>C<br />
 <div class="outline-text-5" id="text-3-3-2-3">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stdio.h&gt;</span>
@@ -2659,8 +2311,8 @@ Can you observe a reduction in the statistical error?
 </div>
 </div>
 
-<div id="outline-container-org38a324f" class="outline-3">
-<h3 id="org38a324f"><span class="section-number-3">3.4.</span> Generalized Metropolis algorithm</h3>
+<div id="outline-container-orgf08efff" class="outline-3">
+<h3 id="orgf08efff"><span class="section-number-3">3.4.</span> Generalized Metropolis algorithm</h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
 One can use more efficient numerical schemes to move the electrons by
@@ -2775,7 +2427,7 @@ Here is an illustration of a trajectory:
 </p>
 
 
-<div id="orgb84214c" class="figure">
+<div id="orga308c46" class="figure">
 <p><img src="./H2_traj.png" alt="H2_traj.png" />
 </p>
 </div>
@@ -2803,8 +2455,8 @@ The algorithm of the previous exercise is only slightly modified as:
 </ol>
 </div>
 
-<div id="outline-container-org02d154f" class="outline-4">
-<h4 id="org02d154f"><span class="section-number-4">3.4.1.</span> Gaussian random number generator</h4>
+<div id="outline-container-org387422f" class="outline-4">
+<h4 id="org387422f"><span class="section-number-4">3.4.1.</span> Gaussian random number generator</h4>
 <div class="outline-text-4" id="text-3-4-1">
 <p>
 To obtain Gaussian-distributed random numbers, you can apply the
@@ -2828,7 +2480,7 @@ be useful for the following sections.
 In Python, you can use the <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.normal.html"><code>random.normal</code></a> function of Numpy.
 </p>
 
-<div class="exercise" id="orgf2a7644">
+<div class="exercise" id="org72fcb1f">
 <p>
 If you use Fortran of C, copy/paste the <code>random_gauss</code> function in
 the <code>qmc_stats.F90</code> or <code>qmc_stats.c</code> file.
@@ -2838,7 +2490,7 @@ the <code>qmc_stats.F90</code> or <code>qmc_stats.c</code> file.
 </div>
 
 <ol class="org-ol">
-<li><a id="orgcfe4ddf"></a>Fortran<br />
+<li><a id="org7e05350"></a>Fortran<br />
 <div class="outline-text-5" id="text-3-4-1-1">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">subroutine</span> <span style="color: #0000ff;">random_gauss</span>(z,n)
@@ -2878,7 +2530,7 @@ the <code>qmc_stats.F90</code> or <code>qmc_stats.c</code> file.
 </div>
 </li>
 
-<li><a id="orgef0498c"></a>C<br />
+<li><a id="orge063d65"></a>C<br />
 <div class="outline-text-5" id="text-3-4-1-2">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">void</span> <span style="color: #0000ff;">random_gauss</span>(<span style="color: #228b22;">double</span>* <span style="color: #a0522d;">z</span>, <span style="color: #228b22;">size_t</span> <span style="color: #a0522d;">n</span>);
@@ -2923,10 +2575,10 @@ the <code>qmc_stats.F90</code> or <code>qmc_stats.c</code> file.
 </ol>
 </div>
 
-<div id="outline-container-orga3809a5" class="outline-4">
-<h4 id="orga3809a5"><span class="section-number-4">3.4.2.</span> Exercise 1</h4>
+<div id="outline-container-org92c6d28" class="outline-4">
+<h4 id="org92c6d28"><span class="section-number-4">3.4.2.</span> Exercise 1</h4>
 <div class="outline-text-4" id="text-3-4-2">
-<div class="exercise" id="org311f251">
+<div class="exercise" id="org1000c6a">
 <p>
 Write a function to compute the drift vector \(\frac{\nabla \Psi(\mathbf{r})}{\Psi(\mathbf{r})}\).
 </p>
@@ -2935,7 +2587,7 @@ Write a function to compute the drift vector \(\frac{\nabla \Psi(\mathbf{r})}{\P
 </div>
 
 <ol class="org-ol">
-<li><a id="orgec5115d"></a>Python<br />
+<li><a id="org1984796"></a>Python<br />
 <div class="outline-text-5" id="text-3-4-2-1">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #a020f0;">def</span> <span style="color: #0000ff;">drift</span>(a,r):
@@ -2945,7 +2597,7 @@ Write a function to compute the drift vector \(\frac{\nabla \Psi(\mathbf{r})}{\P
 </div>
 </li>
 
-<li><a id="org84946fd"></a>Fortran<br />
+<li><a id="org5f648b9"></a>Fortran<br />
 <div class="outline-text-5" id="text-3-4-2-2">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">subroutine</span> <span style="color: #0000ff;">drift</span>(a,r,b)
@@ -2961,7 +2613,7 @@ Write a function to compute the drift vector \(\frac{\nabla \Psi(\mathbf{r})}{\P
 </div>
 </li>
 
-<li><a id="org7b3c625"></a>C<br />
+<li><a id="org48d515f"></a>C<br />
 <div class="outline-text-5" id="text-3-4-2-3">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #228b22;">void</span> <span style="color: #0000ff;">drift</span>(<span style="color: #228b22;">double</span> <span style="color: #a0522d;">a</span>, <span style="color: #228b22;">double</span> <span style="color: #a0522d;">r</span>[3], <span style="color: #228b22;">double</span> <span style="color: #a0522d;">b</span>[3]) {
@@ -2974,10 +2626,10 @@ Write a function to compute the drift vector \(\frac{\nabla \Psi(\mathbf{r})}{\P
 </ol>
 </div>
 
-<div id="outline-container-org71f9272" class="outline-4">
-<h4 id="org71f9272"><span class="section-number-4">3.4.3.</span> Exercise 2</h4>
+<div id="outline-container-orgcbb5610" class="outline-4">
+<h4 id="orgcbb5610"><span class="section-number-4">3.4.3.</span> Exercise 2</h4>
 <div class="outline-text-4" id="text-3-4-3">
-<div class="exercise" id="org6a94446">
+<div class="exercise" id="org1f2ab4c">
 <p>
 Modify the previous program to introduce the drift-diffusion scheme.
 (This is a necessary step for the next section on diffusion Monte Carlo).
@@ -2988,7 +2640,7 @@ Modify the previous program to introduce the drift-diffusion scheme.
 
 
 <ol class="org-ol">
-<li><a id="org59999fd"></a>Python<br />
+<li><a id="org9d6f3c9"></a>Python<br />
 <div class="outline-text-5" id="text-3-4-3-1">
 <div class="org-src-container">
 <pre class="src src-python">#<span style="color: #b22222;">!/usr/bin/env python3</span>
@@ -3020,7 +2672,7 @@ Modify the previous program to introduce the drift-diffusion scheme.
 </div>
 </li>
 
-<li><a id="org804db6b"></a>Fortran<br />
+<li><a id="org1418986"></a>Fortran<br />
 <div class="outline-text-5" id="text-3-4-3-2">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">subroutine</span> <span style="color: #0000ff;">variational_montecarlo</span>(a,nmax,dt,energy,accep)
@@ -3075,7 +2727,7 @@ Modify the previous program to introduce the drift-diffusion scheme.
 </div>
 </li>
 
-<li><a id="org85f2f44"></a>C<br />
+<li><a id="orgddf4ee4"></a>C<br />
 <div class="outline-text-5" id="text-3-4-3-3">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stdio.h&gt;</span>
@@ -3128,8 +2780,8 @@ Modify the previous program to introduce the drift-diffusion scheme.
 </div>
 </div>
 
-<div id="outline-container-org0670e2c" class="outline-2">
-<h2 id="org0670e2c"><span class="section-number-2">4.</span> Diffusion Monte Carlo</h2>
+<div id="outline-container-org27568c5" class="outline-2">
+<h2 id="org27568c5"><span class="section-number-2">4.</span> Diffusion Monte Carlo</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 As we have seen, Variational Monte Carlo is a powerful method to
@@ -3146,8 +2798,8 @@ finding a near-exact numerical solution to the Schrödinger equation.
 </p>
 </div>
 
-<div id="outline-container-org825751d" class="outline-3">
-<h3 id="org825751d"><span class="section-number-3">4.1.</span> Schrödinger equation in imaginary time</h3>
+<div id="outline-container-org9de1793" class="outline-3">
+<h3 id="org9de1793"><span class="section-number-3">4.1.</span> Schrödinger equation in imaginary time</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 Consider the time-dependent Schrödinger equation:
@@ -3215,8 +2867,8 @@ system.
 </div>
 </div>
 
-<div id="outline-container-org30deaee" class="outline-3">
-<h3 id="org30deaee"><span class="section-number-3">4.2.</span> Relation to diffusion</h3>
+<div id="outline-container-org3a16075" class="outline-3">
+<h3 id="org3a16075"><span class="section-number-3">4.2.</span> Relation to diffusion</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 The <a href="https://en.wikipedia.org/wiki/Diffusion_equation">diffusion equation</a> of particles is given by
@@ -3296,8 +2948,8 @@ Therefore, in both cases, you are dealing with a "Bosonic" ground state.
 </div>
 </div>
 
-<div id="outline-container-org608aa5a" class="outline-3">
-<h3 id="org608aa5a"><span class="section-number-3">4.3.</span> Importance sampling</h3>
+<div id="outline-container-orgdc59486" class="outline-3">
+<h3 id="orgdc59486"><span class="section-number-3">4.3.</span> Importance sampling</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 In a molecular system, the potential is far from being constant
@@ -3395,8 +3047,8 @@ energies computed with the trial wave function.
 </p>
 </div>
 
-<div id="outline-container-orga07840c" class="outline-4">
-<h4 id="orga07840c"><span class="section-number-4">4.3.1.</span> Appendix : Details of the Derivation</h4>
+<div id="outline-container-orgc1222c8" class="outline-4">
+<h4 id="orgc1222c8"><span class="section-number-4">4.3.1.</span> Appendix : Details of the Derivation</h4>
 <div class="outline-text-4" id="text-4-3-1">
 <p>
 \[
@@ -3457,8 +3109,8 @@ Defining \(\Pi(\mathbf{r},t) = \psi(\mathbf{r},\tau)
 </div>
 </div>
 
-<div id="outline-container-orgf7700bd" class="outline-3">
-<h3 id="orgf7700bd"><span class="section-number-3">4.4.</span> Pure Diffusion Monte Carlo</h3>
+<div id="outline-container-org45d649d" class="outline-3">
+<h3 id="org45d649d"><span class="section-number-3">4.4.</span> Pure Diffusion Monte Carlo</h3>
 <div class="outline-text-3" id="text-4-4">
 <p>
 Instead of having a variable number of particles to simulate the
@@ -3547,15 +3199,15 @@ the DMC algorithm. However, its use reduces significantly the time-step error.</
 </div>
 </div>
 
-<div id="outline-container-org4d7349b" class="outline-3">
-<h3 id="org4d7349b"><span class="section-number-3">4.5.</span> Hydrogen atom</h3>
+<div id="outline-container-org4756bc2" class="outline-3">
+<h3 id="org4756bc2"><span class="section-number-3">4.5.</span> Hydrogen atom</h3>
 <div class="outline-text-3" id="text-4-5">
 </div>
 
-<div id="outline-container-org9202517" class="outline-4">
-<h4 id="org9202517"><span class="section-number-4">4.5.1.</span> Exercise</h4>
+<div id="outline-container-org3aa1d28" class="outline-4">
+<h4 id="org3aa1d28"><span class="section-number-4">4.5.1.</span> Exercise</h4>
 <div class="outline-text-4" id="text-4-5-1">
-<div class="exercise" id="org8cd5c32">
+<div class="exercise" id="orgeb3bc73">
 <p>
 Modify the Metropolis VMC program into a PDMC program.
 In the limit \(\delta t \rightarrow 0\), you should recover the exact
@@ -3568,7 +3220,7 @@ time \(\tau_{\text{max}}\) =100 a.u.
 </div>
 
 <ol class="org-ol">
-<li><a id="org5e7203c"></a>Python<br />
+<li><a id="org61af796"></a>Python<br />
 <div class="outline-text-5" id="text-4-5-1-1">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #a020f0;">from</span> hydrogen  <span style="color: #a020f0;">import</span> *
@@ -3600,7 +3252,7 @@ time \(\tau_{\text{max}}\) =100 a.u.
 </div>
 </li>
 
-<li><a id="org9de0123"></a>Fortran<br />
+<li><a id="org775a812"></a>Fortran<br />
 <div class="outline-text-5" id="text-4-5-1-2">
 <div class="org-src-container">
 <pre class="src src-f90"><span style="color: #a020f0;">subroutine</span> <span style="color: #0000ff;">pdmc</span>(a, nmax, dt, energy, accep, tau, E_ref)
@@ -3658,7 +3310,7 @@ time \(\tau_{\text{max}}\) =100 a.u.
 </div>
 </li>
 
-<li><a id="orgcbf4e95"></a>C<br />
+<li><a id="org13cb79b"></a>C<br />
 <div class="outline-text-5" id="text-4-5-1-3">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;stdio.h&gt;</span>
@@ -3720,8 +3372,8 @@ time \(\tau_{\text{max}}\) =100 a.u.
 </div>
 
 
-<div id="outline-container-org1ba213b" class="outline-2">
-<h2 id="org1ba213b"><span class="section-number-2">5.</span> Project</h2>
+<div id="outline-container-org127da82" class="outline-2">
+<h2 id="org127da82"><span class="section-number-2">5.</span> Project</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Change your PDMC code for one of the following:
@@ -3738,11 +3390,11 @@ And compute the ground state energy.
 </div>
 
 
-<div id="outline-container-orgd26718d" class="outline-2">
-<h2 id="orgd26718d"><span class="section-number-2">6.</span> Acknowledgments</h2>
+<div id="outline-container-orge762b50" class="outline-2">
+<h2 id="orge762b50"><span class="section-number-2">6.</span> Acknowledgments</h2>
 <div class="outline-text-2" id="text-6">
 
-<div id="org7f3a9c0" class="figure">
+<div id="org8223086" class="figure">
 <p><img src="https://trex-coe.eu/sites/default/files/inline-images/euflag.jpg" alt="euflag.jpg" />
 </p>
 </div>
@@ -3759,7 +3411,7 @@ Union is not responsible for any use that might be made of such content.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Anthony Scemama, Vijay Gopal Chilkuri, Claudia Filippi</p>
-<p class="date">Created: 2025-01-13 Mon 18:35</p>
+<p class="date">Created: 2025-01-13 Mon 18:40</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
