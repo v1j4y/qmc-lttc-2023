@@ -34,7 +34,7 @@
   #+END_SRC   
 
   #+RESULTS:
-  : /home/scemama/TREX/qmc-lttc/QMC.pdf
+  : QMC.pdf
 
 * Introduction
 
@@ -144,6 +144,7 @@
    :header-args:python: :tangle hydrogen.py
    :header-args:f90: :tangle hydrogen.F90
    :header-args:c: :tangle hydrogen.c
+   :header-args:julia: :tangle hydrogen.jl
    :END:
 
    You will now program all quantities needed to compute the local
@@ -300,6 +301,30 @@ int main() {
 #endif
     #+end_src
 
+    #+NAME: test_j
+     #+BEGIN_SRC julia :exports none :tangle none
+###
+<<pot_j>>
+###
+function test_potential()
+    expected_output = -1/15
+    for r in [( 2., 5., 14.), (5., 14., 2.),
+              (-2., 5.,-14.), (5.,-14.,-2.),
+              ( 0., 9.,-12.), (9.,-12., 0.)]
+                  @assert potential(r) ≈ expected_output
+    end
+
+    r = [0. 0. 0.]
+    @assert potential(r) == -Inf
+
+    print("potential ok")
+end
+###
+
+test_potential()
+###
+     #+END_SRC
+
 **** Python
 
      #+BEGIN_SRC python :noweb yes :results none :tangle test_hydrogen.py
@@ -359,8 +384,22 @@ double potential(double r[3]) {
 <<test_c>>
      #+END_SRC
 
-    
-*** Solution                                                      :solution:
+**** Julia
+
+     #+BEGIN_SRC julia :noweb yes :results none :tangle test_hydrogen.jl
+###
+using LinearAlgebra
+###
+function potential(r)
+    # TODO
+end
+###
+
+<<test_j>>
+     #+END_SRC
+
+
+*** Solution                                                      :solution3:
 **** Python
      #+BEGIN_SRC python :results none :noweb yes
 #!/usr/bin/env python3
@@ -422,6 +461,23 @@ double potential(double r[3]) {
 <<test_c>>
      #+end_src
 
+**** Julia
+
+    #+NAME: pot_j
+     #+BEGIN_SRC julia :noweb yes :results none
+using LinearAlgebra
+###
+function potential(r)
+    distance = LinearAlgebra.norm(r)
+    if distance > 1e-30
+        return(-1/distance)
+    else
+        return(-Inf)
+    end
+end
+###
+     #+END_SRC
+
 *** Exercise 2
     #+begin_exercise
     Write a function called ~psi~ that takes two arguments: ~a~ which is a
@@ -454,6 +510,13 @@ double psi(double a, double r[3]) {
 }
      #+end_src
 
+**** Julia
+     #+BEGIN_SRC julia :results none  :tangle none
+function psi(a, r)
+    # TODO
+end
+     #+END_SRC
+
 *** Solution                                                      :solution:
 **** Python
      #+BEGIN_SRC python :results none
@@ -481,7 +544,17 @@ double psi(double a, double r[3]) {
   return exp(-a * distance);
 }
      #+end_src
-     
+
+**** Julia
+     #+BEGIN_SRC julia :results none
+###
+function psi(a, r)
+    distance = LinearAlgebra.norm(r)
+    return(exp(-a*distance))
+end
+###
+     #+END_SRC
+
 *** Exercise 3
     #+begin_exercise
     Write a function called ~kinetic~ that takes two arguments: ~a~
@@ -550,6 +623,13 @@ double kinetic(double a, double r[3]) {
 }
      #+end_src
 
+**** Julia
+     #+BEGIN_SRC julia :results none :tangle none
+function kinetic(a,r)
+    # TODO
+end
+     #+END_SRC
+
 *** Solution                                                      :solution:
 **** Python
      #+BEGIN_SRC python :results none
@@ -598,6 +678,23 @@ double kinetic(double a, double r[3]) {
   }
 }
      #+end_src
+
+**** Julia
+     #+BEGIN_SRC julia :results none
+###
+function kinetic(a,r)
+    distance = LinearAlgebra.norm(r)
+    if distance > 0
+       dinv = 1/distance
+    else
+        println("Warning: kinetic energy diverges at r=0")
+        dinv = Inf
+    end
+    kin = -0.5*(a*a - 2*a/distance)
+    return kin
+end
+###
+     #+END_SRC
 
 *** Exercise 4
     #+begin_exercise
@@ -653,6 +750,13 @@ double e_loc(double a, double r[3]) {
 }
      #+end_src
 
+**** Julia
+     #+BEGIN_SRC julia :results none :tangle none
+function e_loc(a,r)
+    #TODO
+end
+     #+END_SRC
+
 *** Solution                                                      :solution:
 **** Python
      #+BEGIN_SRC python :results none
@@ -681,6 +785,15 @@ double e_loc(double a, double r[3]) {
 }
      #+end_src
 
+**** Julia
+     #+BEGIN_SRC julia :results none
+###
+function e_loc(a,r)
+    return(kinetic(a,r) + potential(r))
+end
+###
+     #+END_SRC
+
 *** Exercise 5
 
     #+begin_exercise
@@ -706,10 +819,11 @@ double e_loc(double a, double r[3]) {
    :header-args:python: :tangle plot_hydrogen.py
    :header-args:f90: :tangle plot_hydrogen.F90
    :header-args:c: :tangle plot_hydrogen.c
+   :header-args:julia: :tangle plot_hydrogen.jl
    :END:
    
    The program you will write in this section will be written in
-   another file (~plot_hydrogen.py~,  ~plot_hydrogen.F90~ or ~plot_hydrogen.c~ for
+   another file (~plot_hydrogen.py~,  ~plot_hydrogen.F90~, ~plot_hydrogen.c~ or ~plot_hydrogen.jl~ for
    example).
    It will use the functions previously defined.
    If you use C, don't forget to write the header file corresponding
@@ -742,6 +856,14 @@ gfortran hydrogen.F90 plot_hydrogen.F90 -o plot_hydrogen
    Similarly, in C
    #+begin_src sh :exports both
 gcc hydrogen.c plot_hydrogen.c -lm -o plot_hydrogen
+   #+end_src
+
+   Similarly, in Julia
+   #+begin_src julia :exports both
+###
+using Revise
+includet("hydrogen.jl")
+###
    #+end_src
 
      #+begin_note
@@ -863,6 +985,20 @@ plot './data' index 0 using 1:2 with lines title 'a=0.1', \
      './data' index 3 using 1:2 with lines title 'a=1.0', \
      './data' index 4 using 1:2 with lines title 'a=1.5', \
      './data' index 5 using 1:2 with lines title 'a=2.0'
+     #+end_src
+
+**** Julia
+     #+BEGIN_SRC julia :results none :tangle none
+using Plots
+
+x=arange(-5,5, length=10)
+plt = plot(x,y,
+           frame = :box,
+           )
+
+# TODO
+
+savefig(plt, "plot_jl.png")
      #+end_src
 
 *** Solution                                                      :solution:
@@ -994,6 +1130,26 @@ plot './data' index 0 using 1:2 with lines title 'a=0.1', \
      #+end_src
      #+RESULTS:
      [[file:plot.png]]
+
+**** Julia
+     #+BEGIN_SRC julia :results none :tangle none
+###
+using Plots
+
+x = range(-5,5, length=100)
+
+plt = nothing
+for a in [0.1, 0.2, 0.5, 1., 1.5, 2.]
+    elist = x .|> x->e_loc(a, x)
+    plt = plot!(x,elist,
+           frame = :box,
+           ylim = [-2,1],
+           )
+end
+
+savefig(plt, "plot_jl.png")
+###
+     #+end_src
 
 ** Numerical estimation of the energy
    :PROPERTIES:
@@ -1132,6 +1288,24 @@ gcc hydrogen.c energy_hydrogen.c -lm -o energy_hydrogen
     At the end of the outer loop, the program calculates the final energy
     by dividing the accumulated energy by the accumulated normalization
     factor, and prints the value of ~a~ and the corresponding energy.
+
+**** Julia
+     #+BEGIN_SRC julia :results none :tangle none
+###
+using Revise
+includet("hydrogen.jl")
+
+interval = range(-5,5,length=50)
+delta = (interval[2]-interval[1])**3
+
+r = [0.,0.,0.]
+
+for a in [0.1, 0.2, 0.5, 0.9, 1., 1.5, 2.]
+    # TODO
+    println(f"a = {a} \t E = {E}")
+end
+###
+     #+end_src
 
 *** Solution                                                      :solution:
 **** Python
@@ -1304,6 +1478,41 @@ gcc hydrogen.c energy_hydrogen.c -lm -o energy_hydrogen
      : a = 1.500000    E = -0.392430
      : a = 2.000000    E = -0.080870
 
+**** Julia
+     #+BEGIN_SRC julia :results none :tangle none
+###
+using Revise
+includet("hydrogen.jl")
+
+interval = range(-5,5,length=50)
+delta = (interval[2]-interval[1])^3
+
+r = [0. 0. 0.]
+
+for a in [0.1, 0.2, 0.5, 0.9, 1., 1.5, 2.]
+    E    = 0.;
+    norm = 0.;
+    for x in interval
+        r[1] = x;
+        for y in interval
+            r[2] = y;
+            for z in interval
+                r[3] = z;
+
+                w = psi(a,r);
+                w = w * w * delta;
+
+                E    += w * e_loc(a,r);
+                norm += w;
+            end
+        end
+    end
+    E = E / norm;
+    println("a = $a \t E = $E")
+end
+###
+     #+end_src
+
 ** Variance of the local energy
    :PROPERTIES:
    :header-args:python: :tangle variance_hydrogen.py
@@ -1438,6 +1647,23 @@ int main() {
 gcc hydrogen.c variance_hydrogen.c -lm -o variance_hydrogen
 ./variance_hydrogen
      #+end_src
+
+**** Julia
+     #+begin_src julia :results none :tangle none
+###
+using Revise
+includet("hydrogen.jl")
+
+interval = range(-5,5,length=50)
+delta = (interval[1]-interval[0])^3
+r = [0. 0. 0.]
+
+for a in [0.1, 0.2, 0.5, 0.9, 1., 1.5, 2.]:
+    # TODO
+    print("a = $a \t E = $E \t \sigma^2 = $s2")
+end
+###
+    #+end_src
 
 *** Solution                                                     :solution:
 **** Python
@@ -1635,6 +1861,46 @@ gcc hydrogen.c variance_hydrogen.c -lm -o variance_hydrogen
      : a = 1.500000    E = -0.392430    s2 = 0.314497
      : a = 2.000000    E = -0.080870    s2 = 1.806881
 
+**** Julia
+     #+BEGIN_SRC julia :results none :tangle none
+###
+using Revise
+includet("hydrogen.jl")
+
+interval = range(-5,5,length=50)
+delta = (interval[2]-interval[1])^3
+
+r = [0. 0. 0.]
+
+for a in [0.1, 0.2, 0.5, 0.9, 1., 1.5, 2.]
+    E    = 0.;
+    E2   = 0.;
+    norm = 0.;
+    for x in interval
+        r[1] = x;
+        for y in interval
+            r[2] = y;
+            for z in interval
+                r[3] = z;
+
+                w = psi(a,r);
+                w = w * w * delta;
+
+                E    += w * e_loc(a,r);
+                E2   += w * e_loc(a,r) * e_loc(a,r);
+                norm += w;
+            end
+        end
+    end
+    E = E / norm;
+    E2 = E2 / norm;
+    s2 = E2 - E*E;
+    print("a = $a \t E = $E \t σ^2 = $s2")
+end
+###
+     #+end_src
+
+
 * Variational Monte Carlo
 
   Numerical integration with deterministic methods is very efficient
@@ -1651,6 +1917,7 @@ gcc hydrogen.c variance_hydrogen.c -lm -o variance_hydrogen
    :header-args:python: :tangle qmc_stats.py
    :header-args:f90: :tangle qmc_stats.F90
    :header-args:c: :tangle qmc_stats.c
+   :header-args:julia: :tangle qmc_stats.jl
    :END:
 
    To compute the statistical error, you need to perform $M$
@@ -1736,6 +2003,16 @@ void ave_error(double* x, size_t n, double *ave, double *err) {
    sum of the square of the difference between each element and the
    average and dividing by ~n-1~. Finally, it calculates the error by
    taking the square root of the variance divided by ~n~.
+
+**** Julia
+     #+BEGIN_SRC julia :results none :tangle none
+###
+function ave_error(arr)
+    #TODO
+    return (average, error)
+end
+###
+     #+END_SRC
 
 *** Solution                                                     :solution:
 **** Python
@@ -1825,11 +2102,30 @@ void ave_error(double* x, size_t n, double *ave, double *err) {
 }
      #+end_src
 
+**** Julia
+     #+BEGIN_SRC julia :results none :tangle none
+###
+function ave_error(arr)
+    dim = length(arr)
+    if dim == 1
+        return(0,0)
+    else
+        average = sum(arr)/dim
+        var = arr .|> x->(x - average)^2
+        var = sum(var)/(dim - 1)
+        error = sqrt(var/dim)
+        return (average, error)
+    end
+end
+###
+     #+END_SRC
+
 ** Uniform sampling in the box
    :PROPERTIES:
    :header-args:python: :tangle qmc_uniform.py
    :header-args:f90: :tangle qmc_uniform.F90
    :header-args:c: :tangle qmc_uniform.c
+   :header-args:julia: :tangle qmc_uniform.jl
    :END:
 
    We will now perform our first Monte Carlo calculation to compute the
@@ -2043,6 +2339,30 @@ int main(void) {
 
     Finally, the program prints the average and error of the energies.
 
+**** Julia
+     #+begin_note
+     To draw a uniform random number in Julia, you can use
+     the [[https://numpy.org/doc/stable/reference/random/generated/numpy.random.uniform.html][~rand~]] function which generates a uniform random number ~[0,1)~.
+     #+end_note
+
+     #+BEGIN_SRC julia :tangle none :exports code
+###
+using Revise
+includet("hydrogen.jl")
+
+function MonteCarlo(a, nmax)
+     # TODO
+
+a    = 1.2
+nmax = 100000
+
+#TODO
+end
+
+print(f"E = {E} +/- {deltaE}")
+###
+     #+END_SRC
+
 *** Solution                                                     :solution:
 **** Python
      #+BEGIN_SRC python :results output :exports both
@@ -2200,6 +2520,38 @@ gcc hydrogen.c qmc_stats.c qmc_uniform.c -lm -o qmc_uniform
      #+end_src
      #+RESULTS:
      : E = -0.479507 +/- 0.001972
+
+**** Julia
+     #+BEGIN_SRC julia :tangle none :exports code
+###
+using Revise
+includet("hydrogen.jl")
+
+function MonteCarlo(a, nmax)
+    w_T = 0
+    E_L = 0
+    for j in 1:nmax
+        x = 10*(0.5-rand())
+        y = 10*(0.5-rand())
+        z = 10*(0.5-rand())
+        r = [x y z]
+        w = psi(a,r)
+        w = w * w
+        w_T += w
+        E_L += w * e_loc(a,r)
+    end
+    E = E_L/w_T
+    return(E)
+end
+
+a    = 1.2;
+nmax = 100000;
+Elist = map(x->MonteCarlo(a,nmax),1:30);
+E, deltaE = ave_error(Elist)
+
+println("E = $E ± $deltaE")
+###
+     #+END_SRC
 
 ** Metropolis sampling with \Psi^2
    :PROPERTIES:
@@ -2435,7 +2787,29 @@ int main(void) {
     return 0;
 }
 
-     #+end_src     
+     #+end_src
+**** Julia
+     #+BEGIN_SRC julia :results output :tangle none
+###
+
+using Revise
+includet("hydrogen.jl")
+
+function MonteCarlo_VMC(a,nmax,dt)
+    # TODO
+    return(energy/nmax, N_accep/nmax)
+end
+###
+# Run simulation
+a    = 1.2
+nmax = 100000
+dt   = #TODO
+
+# TODO
+print("A = $A ± $deltaA")
+###
+     #+END_SRC
+
 *** Solution                                                      :solution:
 **** Python
      #+BEGIN_SRC python :results output :exports both
@@ -2656,6 +3030,55 @@ gcc hydrogen.c qmc_stats.c qmc_metropolis.c -lm -o qmc_metropolis
      : E = -0.479518 +/- 0.000466
      : A = 0.507560 +/- 0.000353
 
+**** Julia
+     #+BEGIN_SRC julia :results output :tangle none
+###
+
+using Revise
+includet("hydrogen.jl")
+
+function MonteCarlo_VMC(a,nmax,dt)
+    x = 10*(0.5-rand())
+    y = 10*(0.5-rand())
+    z = 10*(0.5-rand())
+    r1= [x y z]
+    energy = 0
+    N_accep = 0
+    for n in 1:nmax
+        psir1= psi(a,r1)
+        energy += e_loc(a,r1)
+        xu = 2*(0.5 - rand())
+        yu = 2*(0.5 - rand())
+        zu = 2*(0.5 - rand())
+        r2 = r1 + dt * [xu yu zu]
+        psir2= psi(a,r2)
+        acceptr1r2 = psir2*psir2/(psir1*psir1)
+        if rand() <= acceptr1r2
+            r1 = r2
+            N_accep += 1
+        end
+    end
+    return(energy/nmax, N_accep/nmax)
+end
+###
+# Run simulation
+a    = 1.2
+nmax = 100000
+dt   = 1.0
+
+X0 = map(x->MonteCarlo_VMC(a,nmax,dt),1:30);
+# Energy
+X = [ x for (x, _) in X0 ];
+E, deltaE = ave_error(X);
+println("E = $E ± $deltaE")
+###
+# Acceptance rate
+X = [ x for (_, x) in X0 ];
+A, deltaA = ave_error(X);
+print("A = $A ± $deltaA")
+###
+     #+END_SRC
+
 ** Generalized Metropolis algorithm
    :PROPERTIES:
    :header-args:python: :tangle vmc_metropolis.py
@@ -2774,6 +3197,7 @@ gcc hydrogen.c qmc_stats.c qmc_metropolis.c -lm -o qmc_metropolis
     Gaussian-distributed n-dimensional vector $\mathbf{z}$. This will
     be useful for the following sections.
     In Python, you can use the [[https://numpy.org/doc/stable/reference/random/generated/numpy.random.normal.html][~random.normal~]] function of Numpy.
+    In Julia, you can use the [[https://numpy.org/doc/stable/reference/random/generated/numpy.random.normal.html][~Normal~]] function of ~Distributions~ package.
 
     #+begin_exercise
     If you use Fortran of C, copy/paste the ~random_gauss~ function in
@@ -2855,7 +3279,24 @@ void random_gauss(double* z, size_t n) {
     #+end_src
    
 *** Exercise 1
-    
+
+Recall that the gradient of $\Psi$ ($\nabla\Psi$) is:
+
+\[
+\nabla\Psi = \left (\frac{\partial \Psi}{\partial x}, \frac{\partial \Psi}{\partial y},\frac{\partial \Psi}{\partial z} \right)
+\]
+
+where,
+
+\[
+\frac{\partial \Psi}{\partial x}
+      =  - \frac{a\,x}{|\mathbf{r}|} \Psi(\mathbf{r}) \]
+
+hense,
+
+\[
+\frac{\nabla\Psi}{\Psi} = \left (-\frac{a x}{|\bold{r}|},-\frac{a y}{|\bold{r}|},-\frac{a z}{|\bold{r}|}, \right)
+\]
      
      #+begin_exercise
      Write a function to compute the drift vector $\frac{\nabla \Psi(\mathbf{r})}{\Psi(\mathbf{r})}$.
@@ -2885,6 +3326,13 @@ void drift(double a, double r[3], double b[3]) {
   //TODO
 }
      #+end_src
+
+**** Julia
+     #+BEGIN_SRC julia :tangle none
+function drift(a,r)
+   # TODO
+end
+     #+END_SRC
 
 *** Solution                                                     :solution:
 **** Python
@@ -2922,6 +3370,17 @@ void drift(double a, double r[3], double b[3]) {
   }
 }
      #+end_src
+
+**** Julia
+     #+BEGIN_SRC julia :tangle none
+###
+function drift(a,r)
+    distance = LinearAlgebra.norm(r)
+    drift = -a * r / distance
+    return(drift)
+end
+###
+     #+END_SRC
 
 *** Exercise 2
 
@@ -3058,6 +3517,35 @@ int main(void) {
 gcc hydrogen.c qmc_stats.c vmc_metropolis.c -lm -o vmc_metropolis
 ./vmc_metropolis
      #+end_src
+**** Julia
+     #+BEGIN_SRC julia :results output :tangle none
+###
+using Revise
+includet("hydrogen.jl")
+
+function MonteCarlo_GVMC(a,nmax,dt):
+   # TODO
+end
+
+# Run simulation
+a    = 1.2
+nmax = 100000
+dt   = # TODO
+
+X0 = [ MonteCarlo(a,nmax,dt) for i in range(30)]
+
+# Energy
+X = [ x for (x, _) in X0 ]
+E, deltaE = ave_error(X)
+print(f"E = {E} +/- {deltaE}")
+
+# Acceptance rate
+X = [ x for (_, x) in X0 ]
+A, deltaA = ave_error(X)
+print(f"A = {A} +/- {deltaA}")
+###
+     #+END_SRC
+
 *** Solution                                                      :solution:
 
     #+begin_note
@@ -3387,6 +3875,69 @@ gcc hydrogen.c qmc_stats.c vmc_metropolis.c -lm -o vmc_metropolis
      #+RESULTS:
      : E = -0.479814 +/- 0.000552
      : A = 0.621853 +/- 0.000401
+
+**** Julia
+     #+BEGIN_SRC julia :results output :tangle none
+###
+using Revise
+includet("hydrogen.jl")
+
+
+function MonteCarlo_GVMC(a,nmax,dt)
+    # Normal distribution
+    d = Normal(0.0,1.0);
+
+    x = rand()*2*dt - dt;
+    y = rand()*2*dt - dt;
+    z = rand()*2*dt - dt;
+    r1 = [x y z]
+    sq_dt = sqrt(dt)
+    energy = 0
+    N_accep = 0
+    for n = 1:nmax
+        χ = rand(d,3)
+        w1 = psi(a,r1)
+        energy += e_loc(a,r1)
+        driftr1 = drift(a,r1)
+        r2 = r1 + dt * driftr1 + sq_dt * χ'
+        driftr2 = drift(a,r2)
+        w2 = psi(a,r2)
+        d2r1 = dot(driftr1, driftr1)
+        d2r2 = dot(driftr2, driftr2)
+
+        # Generalized Metropolis
+        prod    = dot((driftr2 + driftr1), (r2 - r1))
+        argexpo = 0.5 * (d2r2 - d2r1)*dt + prod
+
+        q = w2 / w1
+        q = exp(-argexpo) * q*q
+
+        if rand() <= q
+            r1 = r2
+            N_accep += 1
+        end
+    end
+    return(energy/nmax, N_accep/nmax)
+end
+###
+# Run simulation
+a    = 1.2
+nmax = 100000
+dt   = 1.0
+
+X0 = [ MonteCarlo_GVMC(a,nmax,dt) for i = 1:30];
+###
+# Energy
+X = [ x for (x, _) in X0 ];
+E, deltaE = ave_error(X)
+print("E = $E ± $deltaE")
+###
+# Acceptance rate
+X = [ x for (_, x) in X0 ];
+A, deltaA = ave_error(X)
+print("A = $A ± $deltaA")
+###
+     #+END_SRC
 
 * Diffusion Monte Carlo
 
@@ -3831,6 +4382,39 @@ int main(void) {
 gcc hydrogen.c qmc_stats.c pdmc.c -lm -o pdmc
 ./pdmc
      #+end_src
+**** Julia
+         #+BEGIN_SRC julia :results output
+###
+using Revise
+includet("hydrogen.jl")
+
+function MonteCarlo_DMC(a, nmax, dt, Eref)
+    # TODO
+end
+###
+# Run simulation
+a     = 1.2
+nmax  = 100000
+dt    = 0.05
+tau   = 100.
+E_ref = -0.5
+
+X0 = [ MonteCarlo(a, nmax, dt, E_ref) for i in range(30)]
+###
+# Energy
+X = [ x for (x, _) in X0 ]
+E, deltaE = ave_error(X)
+print(f"E = {E} +/- {deltaE}")
+
+# Acceptance rate
+X = [ x for (_, x) in X0 ]
+A, deltaA = ave_error(X)
+print(f"A = {A} +/- {deltaA}")
+###
+         #+END_SRC
+
+         #+RESULTS:
+
 *** Solution                                                      :solution:
 
 **** Python
@@ -4173,7 +4757,109 @@ gcc hydrogen.c qmc_stats.c pdmc.c -lm -o pdmc
      #+RESULTS:
      : E = -0.500031 +/- 0.000805
      : A = 0.989511 +/- 0.000070
-     
+
+**** Julia
+         #+BEGIN_SRC julia :results output
+###
+using DelimitedFiles
+using Revise
+includet("hydrogen.jl")
+
+coords_list = [];
+function MonteCarlo_DMC(a, nmax, dt, tau, Eref)
+    sq_dt = sqrt(dt)
+
+    energy  = 0.
+    N_accep = 0
+    normalization = 0.
+
+    w           = 1.
+    tau_current = 0.
+
+    x_old = rand()*2*dt - dt;
+    y_old = rand()*2*dt - dt;
+    z_old = rand()*2*dt - dt;
+    r_old = [x_old,y_old,z_old];
+    d_old   = drift(a,r_old)
+    d2_old  = dot(d_old,d_old)
+    psi_old = psi(a,r_old)
+
+    # Normal distribution
+    d = Normal(0.0,1.0);
+
+    for istep in range(1,nmax)
+        el = e_loc(a,r_old)
+        w *= exp(-dt*(el - Eref))
+
+        normalization += w
+        energy        += w * el
+
+        tau_current += dt
+
+        # Reset when tau is reached
+        if tau_current > tau
+            w           = 1.
+            tau_current = 0.
+        end
+
+        chi = rand(d,3);
+
+        x_new = rand()*2*dt - dt;
+        y_new = rand()*2*dt - dt;
+        z_new = rand()*2*dt - dt;
+        r_new = [x_new,y_new,z_new];
+        r_new = r_old + dt * d_old + sq_dt * chi
+        d_new = drift(a,r_new)
+        d2_new = dot(d_new,d_new)
+        psi_new = psi(a,r_new)
+
+        # Metropolis
+        prod = dot((d_new + d_old), (r_new - r_old))
+        argexpo = 0.5 * (d2_new - d2_old)*dt + prod
+
+        q = psi_new / psi_old
+        q = exp(-argexpo) * q*q
+
+        if rand() <= q
+            N_accep += 1
+            r_old   = r_new
+            d_old   = d_new
+            d2_old  = d2_new
+            psi_old = psi_new
+            push!(coords_list, r_old);
+        end
+    end
+
+    open("/tmp/coords_list.txt", "w") do io
+        writedlm(io, coords_list)
+    end
+
+    return([energy/normalization, N_accep/nmax])
+end
+###
+# Run simulation
+a     = 1.2
+nmax  = 100000
+dt    = 0.05
+tau   = 100.
+E_ref = -0.5
+
+X0 = [ MonteCarlo_DMC(a, nmax, dt, tau, E_ref) for i in 1:30];
+###
+# Energy
+X = [ x for (x, _) in X0 ];
+E, deltaE = ave_error(X)
+println("E = $E ± $deltaE")
+###
+# Acceptance rate
+X = [ x for (_, x) in X0 ]
+A, deltaA = ave_error(X)
+println("A = $A ± $deltaA")
+###
+         #+END_SRC
+
+         #+RESULTS:
+
 
 * Project
 
