@@ -1737,7 +1737,7 @@ void ave_error(double* x, size_t n, double *ave, double *err) {
    average and dividing by ~n-1~. Finally, it calculates the error by
    taking the square root of the variance divided by ~n~.
 
-*** Solution                                                     :solution:
+*** Solution                                                     :solution3:
 **** Python
      #+BEGIN_SRC python :results none :exports code
 #!/usr/bin/env python3
@@ -2043,7 +2043,7 @@ int main(void) {
 
     Finally, the program prints the average and error of the energies.
 
-*** Solution                                                     :solution:
+*** Solution                                                     :solution3:
 **** Python
      #+BEGIN_SRC python :results output :exports both
 #!/usr/bin/env python3
