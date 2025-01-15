@@ -865,7 +865,7 @@ plot './data' index 0 using 1:2 with lines title 'a=0.1', \
      './data' index 5 using 1:2 with lines title 'a=2.0'
      #+end_src
 
-*** Solution                                                      :solution:
+*** Solution                                                      :solution3:
 **** Python
      #+BEGIN_SRC python :results none
 #!/usr/bin/env python3
