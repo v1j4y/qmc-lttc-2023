@@ -2886,7 +2886,7 @@ void drift(double a, double r[3], double b[3]) {
 }
      #+end_src
 
-*** Solution                                                     :solution:
+*** Solution                                                     :solution3:
 **** Python
      #+BEGIN_SRC python :tangle hydrogen.py
 def drift(a,r):
@@ -3058,7 +3058,7 @@ int main(void) {
 gcc hydrogen.c qmc_stats.c vmc_metropolis.c -lm -o vmc_metropolis
 ./vmc_metropolis
      #+end_src
-*** Solution                                                      :solution:
+*** Solution                                                      :solution3:
 
     #+begin_note
     The ratio of transition probabilities can be expressed as:
