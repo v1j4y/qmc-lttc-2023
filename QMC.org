@@ -1439,7 +1439,7 @@ gcc hydrogen.c variance_hydrogen.c -lm -o variance_hydrogen
 ./variance_hydrogen
      #+end_src
 
-*** Solution                                                     :solution:
+*** Solution                                                     :solution3:
 **** Python
      #+BEGIN_SRC python :results none :exports both
 #!/usr/bin/env python3
