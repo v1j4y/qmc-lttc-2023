@@ -1133,7 +1133,7 @@ gcc hydrogen.c energy_hydrogen.c -lm -o energy_hydrogen
     by dividing the accumulated energy by the accumulated normalization
     factor, and prints the value of ~a~ and the corresponding energy.
 
-*** Solution                                                      :solution:
+*** Solution                                                      :solution3:
 **** Python
      #+BEGIN_SRC python :results none :exports both
 #!/usr/bin/env python3
