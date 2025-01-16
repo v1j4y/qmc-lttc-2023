@@ -3687,7 +3687,9 @@ gcc hydrogen.c qmc_stats.c vmc_metropolis.c -lm -o vmc_metropolis
   :header-args:c: :tangle pdmc.c
   :END:
    
-*** Exercise 
+*** Exercise
+
+
 
      #+begin_exercise
      Modify the Metropolis VMC program into a PDMC program.
@@ -3831,7 +3833,8 @@ int main(void) {
 gcc hydrogen.c qmc_stats.c pdmc.c -lm -o pdmc
 ./pdmc
      #+end_src
-*** Solution                                                      :solution:
+
+*** Solution                                                      :solution3:
 
 **** Python
      #+BEGIN_SRC python :results output
