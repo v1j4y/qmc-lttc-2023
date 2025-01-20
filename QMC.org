@@ -4180,7 +4180,7 @@ gcc hydrogen.c qmc_stats.c pdmc.c -lm -o pdmc
 
 * Project
 
-  Change your PDMC code for one of the following:
+  Change your VMC (or PDMC) code for one of the following:
   - the Helium atom, or
   - the H_2 molecule at $R$ =1.401 bohr.
     
