@@ -2730,7 +2730,7 @@ gcc hydrogen.c qmc_stats.c qmc_metropolis.c -lm -o qmc_metropolis
    
    \[
    \mathbf{r}_{n+1} = \mathbf{r}_{n} + \delta t\, \frac{\nabla
-   \Psi(\mathbf{r})}{\Psi(\mathbf{r})} + \sqrt{\delta t}\, \chi \,,
+   \Psi(\mathbf{r}_{n})}{\Psi(\mathbf{r}_{n})} + \sqrt{\delta t}\, \chi \,,
    \]
 
    where $\chi$ is a Gaussian random variable with zero mean and
